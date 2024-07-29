@@ -8,7 +8,7 @@
     font-family: inherit;
   }
 body{
-background-image: url(assets/ok.jpg);
+background-image: url(../assets/ok.jpg);
 background-repeat: no-repeat;
 background-size: cover;
 overflow: hidden;
@@ -81,7 +81,7 @@ footer{
 
 @media screen and (max-width: 768px) {
   body{
-    background-image: url(assets/ok.jpg);
+    background-image: url(../assets/ok.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     overflow: hidden;
