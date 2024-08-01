@@ -13,4 +13,11 @@ function myFunction(x) {
 }
 
 
-
+document.addEventListener("DOMContentLoaded", function() {
+  const ddBtn = document.querySelector('.dropDown');
+  const ddConts = document.querySelector('.DD-container');
+ 
+  ddBtn.addEventListener('click', function() {
+    ddConts.classList.toggle('ddactive');
+  });
+});
