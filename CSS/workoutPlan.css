@@ -137,8 +137,13 @@ font-family: "arial";
   border-radius: 10px;
   width: 140px;
   height: 50px;
+  cursor: pointer;
+  transition: transform 0.5s ease;
 }
 
+.logOutBtn:active{
+  transform: scale(0.90);
+}
 
 /* nav */
 .container{
@@ -218,7 +223,6 @@ font-family: "arial";
 
 /* main */
 .main{
-  z-index: -1;
   width: 100%;
 }
 
@@ -329,7 +333,7 @@ font-family: "arial";
   height: 100%;
 }
 
-.add-activity{
+#add-activity{
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -343,11 +347,87 @@ font-family: "arial";
   transition: transform 0.4s ease-in-out;
 }
 
-.add-activity:active{
+#add-activity:active{
   transform: scale(0.90);
 }
 
+.hidden {
+  display: none;
+}
 
+.act-container{
+  width: 100%;
+}
+
+#inputContainer {
+  margin-top: 20px;
+}
+
+.alignItems{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+#userInput{
+  width: 230px;
+  height: 50px;
+  padding: 5px;
+  border: none;
+  font-family: "roboto";
+  font-size: 16px;
+}
+
+#submitInputBtn{
+  width: 60px;
+  height: 40px;
+  padding: 5px;
+  background-color: #112C9F;
+  color: white;
+  border-radius: 10px;
+  border: none;
+  font-family: "roboto";
+  font-weight: 800;
+  font-size: 14px;
+}
+
+#xBtn{
+  background-color: transparent;
+  border: none;
+  height: 30px;
+  width: 30px;
+  cursor: pointer;
+}
+
+#outputContainer {
+  margin-top: 20px;
+}
+
+.outputDiv {
+  margin-top: 10px;
+  padding: 10px;
+  border: 3px solid #ccc;
+  border-radius: 5px;
+  background-color: #0CC0DF;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.deleteBtn{
+  width: 50px;
+  height: 25px;
+  border-radius: 20px;
+  border: none;
+  font-family: "roboto";
+  cursor: pointer;
+}
+
+
+
+
+
+/* media query */
 @media screen and (max-width: 1168px) {
   /* header */
   .logo h6{

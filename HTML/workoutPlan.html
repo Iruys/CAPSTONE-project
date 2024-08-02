@@ -74,11 +74,25 @@
       <div class="right">
         <div class="act1 acts">
           <h1>Acivities</h1>
-            <button class="add-activity">
+            <button id="add-activity">
             <img src="../assets/AddButton.png" alt="" height="40"> 
             <p>Add Workout</p>
           </button>
-          <div class="act-container"></div>
+
+          <div class="act-container">
+            <div id="inputContainer" class="hidden">
+              <div class="alignItems">
+              <button id="xBtn"><img src="../assets/xbtn.png" alt="" height="25"></button>
+              <input type="text" id="userInput" placeholder="Enter some text">
+              <button id="submitInputBtn">Submit</button>
+            </div>
+          </div>
+
+          <div id="outputContainer">
+            
+          </div>
+
+          </div>
         </div>
         <div class="act2 acts"></div>
       </div>
