@@ -14,6 +14,7 @@ body{
 
 /* header */
 header{
+  z-index: 1;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -118,7 +119,7 @@ font-family: "arial";
   width: 20%;
   height: 0px;
   margin-top: 95px;
-  transition: height 0.8s ease;
+  transition: height 0.5s ease;
   overflow: hidden;
 }
 
@@ -216,7 +217,7 @@ font-family: "arial";
 
 /* main */
 .main{
-
+  z-index: -1;
   width: 100%;
 }
 
@@ -397,15 +398,21 @@ font-weight: 800;
   font-family: "arial";
   }
   
-  .consts-dropDown{
-    column-gap: 9px;
-    width: 40px;
-    height: 30px;
+  .dropDown img{
+    height: 20px;
+    width: 20px;
+  }
+  .DD-container.ddactive{
+    height: 130px;
+  }
+  .DD-container{
+    margin-top: 100px;
   }
   
-  .line1, .line2{
-    width: 2px;
-    height: 20px;
+  .logOutBtn{
+    font-size: 16px;
+    width: 130px;
+    height: 40px;
   }
   
   /* nav bar */
@@ -428,8 +435,30 @@ font-weight: 800;
 
   /* main */
 
-
-
+  .weightScale{
+    width: 90%;
+  }
+  
+  .workoutProg{
+    width: 90%;
+  }
+  
+  .feedback{
+    width: 90%;
+  }
+    .weights{
+      width: 95%;
+      height: 90%;
+    }
+  
+    .progress-conts{
+      width: 95%;
+      height: 90%;
+    }
+    .fb{
+      width: 95%;
+      height: 90%;
+    }
 }
 
 @media screen and (max-width:825px) {
@@ -472,6 +501,35 @@ font-weight: 800;
         font-size: 24px;
       }
 
+      .dropDown img{
+        height: 20px;
+        width: 20px;
+      }
+
+      .DD-container{
+        margin-top: 70px;
+      }
+      .DD-container.ddactive{
+        height: 150px;
+      }
+      
+      .logOutBtn{
+        background-color: #112C9F;
+        color: white;
+        font-family: "nunito";
+        font-size: 20px;
+        border: none;
+        font-weight: 800;
+        border-radius: 10px;
+        width: 140px;
+        height: 50px;
+      }
+
+      .logOutBtn{
+        font-size: 14px;
+        width: 120px;
+        height: 30px;
+      }
       /* nav bar */
       .container{
         display: flex;
@@ -529,7 +587,41 @@ font-weight: 800;
         width: 100%;
       }
 
-
-    
+      .progress-container{
+        flex-direction: column;
+      }
+      .weightScale{
+        width: 90%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      
+      .workoutProg{
+        width: 90%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      
+      .feedback{
+        width: 90%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+        .weights{
+          width: 100%;
+          height: 90%;
+        }
+      
+        .progress-conts{
+          width: 100%;
+          height: 90%;
+        }
+        .fb{
+          width: 100%;
+          height: 90%;
+        }
   
     }

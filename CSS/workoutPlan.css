@@ -14,6 +14,7 @@ body{
 
 /* header */
 header{
+  z-index: 1;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -118,7 +119,7 @@ font-family: "arial";
   width: 20%;
   height: 0px;
   margin-top: 95px;
-  transition: height 0.8s ease;
+  transition: height 0.5s ease;
   overflow: hidden;
 }
 
@@ -217,7 +218,7 @@ font-family: "arial";
 
 /* main */
 .main{
-
+  z-index: -1;
   width: 100%;
 }
 
@@ -360,15 +361,17 @@ font-family: "arial";
   font-family: "arial";
   }
   
-  .consts-dropDown{
-    column-gap: 9px;
-    width: 40px;
-    height: 30px;
+  .DD-container.ddactive{
+    height: 130px;
+  }
+  .DD-container{
+    margin-top: 100px;
   }
   
-  .line1, .line2{
-    width: 2px;
-    height: 20px;
+  .logOutBtn{
+    font-size: 16px;
+    width: 130px;
+    height: 40px;
   }
   
   /* nav bar */
@@ -496,6 +499,36 @@ font-family: "arial";
 
       .logo h6{
         font-size: 24px;
+      }
+
+      .dropDown img{
+        height: 20px;
+        width: 20px;
+      }
+
+      .DD-container{
+        margin-top: 70px;
+      }
+      .DD-container.ddactive{
+        height: 150px;
+      }
+      
+      .logOutBtn{
+        background-color: #112C9F;
+        color: white;
+        font-family: "nunito";
+        font-size: 20px;
+        border: none;
+        font-weight: 800;
+        border-radius: 10px;
+        width: 140px;
+        height: 50px;
+      }
+
+      .logOutBtn{
+        font-size: 14px;
+        width: 120px;
+        height: 30px;
       }
 
       /* nav bar */
