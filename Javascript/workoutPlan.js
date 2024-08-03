@@ -1,3 +1,4 @@
+// Side bar function
 document.addEventListener("DOMContentLoaded", function() {
   const hamburger = document.getElementById('hamburger');
   const nav = document.querySelector('.nav');
@@ -12,7 +13,7 @@ function myFunction(x) {
   x.classList.toggle("change");
 }
 
-
+//Logout Dropdown
 document.addEventListener("DOMContentLoaded", function() {
   const ddBtn = document.querySelector('.dropDown');
   const ddConts = document.querySelector('.DD-container');
@@ -23,7 +24,62 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 
+// Adding description
+const modalL = document.getElementById('modal-left');
+const overlayL = document.getElementById('overlay-left');
+const inputButtonL = document.querySelector('.input-button-left');
+const outputContainerL = document.getElementById('outputContainer-left');
 
+function openModalL() {
+    overlayL.style.display = 'block';
+    modalL.classList.add('showL');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeModalL() {
+    modalL.classList.add('hideL');
+    modalL.addEventListener('transitionend', () => {
+        overlayL.style.display = 'none';
+        modalL.classList.remove('showL', 'hideL');
+        document.body.style.overflow = 'auto';
+    }, { once: true });
+}
+
+overlayL.addEventListener('click', closeModalL);
+document.querySelector('.close-button-left').addEventListener('click', closeModalL);
+
+document.getElementById('add-post-button-left').addEventListener('click', function() {
+    const userInput = document.getElementById('userInput-left').value;
+    if (userInput) {
+        const newDiv = document.createElement('div');
+        newDiv.className = 'outputDivL';
+
+        const span = document.createElement('span');
+        span.textContent = userInput;
+        newDiv.appendChild(span);
+
+        const deleteBtn = document.createElement('button');
+        deleteBtn.textContent = 'Delete';
+        deleteBtn.className = 'deleteBtnL';
+        newDiv.appendChild(deleteBtn);
+
+        deleteBtn.addEventListener('click', function() {
+            newDiv.remove();
+            if (outputContainerL.children.length === 0) {
+                inputButtonL.style.display = 'block';
+            }
+        });
+
+        outputContainerL.appendChild(newDiv);
+        document.getElementById('userInput-left').value = ''; // Clear the input field
+        closeModalL(); // Close the modal
+        inputButtonL.style.display = 'none'; // Hide the input button
+    }
+});
+
+
+
+// Adding activity
 const modal = document.getElementById('modal');
 const overlay = document.getElementById('overlay');
 

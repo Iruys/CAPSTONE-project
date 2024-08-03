@@ -67,20 +67,39 @@
         </div>
     
         <div class="description-cont">
-     <div class="titles">
-      
-     </div>
-     <div  class="descriptions"></div>
+
+          <div class="containers-left">
+            <button class="input-button-left" onclick="openModalL()">Add Exercises</button>
+        </div>
+        <div class="overlay-left" id="overlay-left"></div>
+
+        <div class="modal-left" id="modal-left">
+            <div class="modal-header-left">
+                <h2 class="modal-title-left">Input Exercises with set and Repititions</h2>
+                <button class="close-button-left" onclick="closeModalL()">×</button>
+            </div>
+            <div class="modal-body-left">
+                <textarea placeholder="Exercises" id="userInput-left"></textarea>
+            </div>
+            <div class="modal-footer-left">
+                <button id="add-post-button-left" onclick="closeModalL()">Add Post</button>
+            </div>
+        </div>
+
+        <div id="outputContainer-left"></div>
         </div>
       </div>
+
       <div class="right">
 
         <div class="activity">
+
           <div class="containers">
             <button class="input-button" onclick="openModal()">Add Exercises</button>
         </div>
         
         <div class="overlay" id="overlay"></div>
+
         <div class="modal" id="modal">
             <div class="modal-header">
                 <h2 class="modal-title">Input Exercises with set and Repititions</h2>
@@ -93,11 +112,11 @@
                 <button id="add-post-button" onclick="closeModal()">Add Post</button>
             </div>
         </div>
-        
+
         <div id="outputContainer"></div>
 
         </div>
-        </div>
+      </div>
     </div>
   </main>
 
