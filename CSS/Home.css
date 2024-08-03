@@ -599,7 +599,7 @@ img {vertical-align: middle;}
         margin-top: 70px;
       }
       .DD-container.ddactive{
-        height: 150px;
+        height: 110px;
       }
       
       .logOutBtn{
@@ -719,7 +719,6 @@ img {vertical-align: middle;}
       } 
       
       .threeDots{
-        margin-top: 330px;
+        margin-top: 130px;
       }
-      
   }

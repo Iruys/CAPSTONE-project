@@ -67,37 +67,37 @@
         </div>
     
         <div class="description-cont">
-          <h1>Title</h1>
-          <p>Description</p>
+     <div class="titles">
+      
+     </div>
+     <div  class="descriptions"></div>
         </div>
       </div>
       <div class="right">
-        <div class="act1 acts">
-          <h1>Acivities</h1>
-            <button id="add-activity">
-            <img src="../assets/AddButton.png" alt="" height="40"> 
-            <p>Add Workout</p>
-          </button>
 
-          <div class="act-container">
-            <div id="inputContainer" class="hidden">
-              <div class="alignItems">
-              <button id="xBtn"><img src="../assets/xbtn.png" alt="" height="25"></button>
-              <input type="text" id="userInput" placeholder="Enter some text">
-              <button id="submitInputBtn">Submit</button>
-            </div>
-          </div>
-
-          <div id="outputContainer">
-            
-          </div>
-
-          </div>
+        <div class="activity">
+          <div class="containers">
+            <button class="input-button" onclick="openModal()">Add Exercises</button>
         </div>
-        <div class="act2 acts"></div>
-      </div>
-   
+        
+        <div class="overlay" id="overlay"></div>
+        <div class="modal" id="modal">
+            <div class="modal-header">
+                <h2 class="modal-title">Input Exercises with set and Repititions</h2>
+                <button class="close-button" onclick="closeModal()">×</button>
+            </div>
+            <div class="modal-body">
+                <textarea placeholder="Exercises" id="userInput"></textarea>
+            </div>
+            <div class="modal-footer">
+                <button id="add-post-button" onclick="closeModal()">Add Post</button>
+            </div>
+        </div>
+        
+        <div id="outputContainer"></div>
 
+        </div>
+        </div>
     </div>
   </main>
 

@@ -223,6 +223,7 @@ font-family: "arial";
 
 /* main */
 .main{
+  padding: 10px;
   width: 100%;
 }
 
@@ -308,99 +309,124 @@ font-family: "arial";
   justify-content: space-evenly;
   padding: 10px;
   width: 60%;
-  height: 100%;
+  height: 650px;
 }
 
-.act1{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 10px;
-  font-family:"nunito";
-}
-
-.act1 h1{
-  font-weight: 800;
-  color: white;
-  font-size: 40px;
-  margin-bottom: 15px;
-}
-
-.acts{
-  background-color: #0097B2;
-  border-radius: 10px;
-  width: 45%;
-  height: 100%;
-}
-
-#add-activity{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background-color: white;
-  border-radius: 10px;
-  width: 90%;
-  height: 100px;
-  border: none;
-  cursor: pointer;
-  transition: transform 0.4s ease-in-out;
-}
-
-#add-activity:active{
-  transform: scale(0.90);
-}
-
-.hidden {
-  display: none;
-}
-
-.act-container{
+.activity{
   width: 100%;
+  height: 100%;
+  background-color: #0CC0DF;
 }
 
-#inputContainer {
+.containers {
+  margin: 20px auto;
+  text-align: center;
+}
+.input-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #4267b2;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+.input-button:hover {
+  background-color: #365899;
+}
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+.modal {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 500px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1001;
+  opacity: 0;
+  transition: opacity 0.15s ease, transform 0.15s ease;
+}
+.modal.show {
+  display: block;
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+.modal.hide {
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.7);
+}
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #e0e0e0;
+  padding-bottom: 10px;
+}
+.modal-title {
+  font-size: 18px;
+  font-family: "nunito";
+}
+.close-button {
+  background-color: transparent;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+.modal-body {
+  margin-top: 20px;
+}
+.modal-body textarea {
+  width: 100%;
+  height: 100px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #e0e0e0;
+  font-size: 16px;
+  resize: none;
+}
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
   margin-top: 20px;
 }
 
-.alignItems{
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-}
-
-#userInput{
-  width: 230px;
-  height: 50px;
-  padding: 5px;
-  border: none;
-  font-family: "roboto";
+#add-post-button {
+  padding: 10px 20px;
   font-size: 16px;
-}
-
-#submitInputBtn{
-  width: 60px;
-  height: 40px;
-  padding: 5px;
-  background-color: #112C9F;
-  color: white;
-  border-radius: 10px;
   border: none;
-  font-family: "roboto";
-  font-weight: 800;
-  font-size: 14px;
-}
-
-#xBtn{
-  background-color: transparent;
-  border: none;
-  height: 30px;
-  width: 30px;
+  border-radius: 5px;
   cursor: pointer;
+  background-color: #4267b2;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+#add-post-button:hover {
+  background-color: #365899;
 }
 
 #outputContainer {
-  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  padding: 5px;
+  height: 550px;
+  overflow: hidden;
 }
 
 .outputDiv {
@@ -409,17 +435,25 @@ font-family: "arial";
   border: 3px solid #ccc;
   border-radius: 5px;
   background-color: #0CC0DF;
+  font-family: "nunito";
+  color: white;
+  font-size: 24px;
+  font-weight: 800;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  width: 45%;
+  height: 70px;
 }
 
 .deleteBtn{
-  width: 50px;
-  height: 25px;
+  width: 60px;
+  height: 30px;
   border-radius: 20px;
   border: none;
   font-family: "roboto";
+  background-color: #365899;
+  color: white;
   cursor: pointer;
 }
 
@@ -518,33 +552,35 @@ font-family: "arial";
     width: 50%;
     height: 100%;
   }
-  
-  .act1{
-    position: absolute;
+
+  .modal {
+    width: 80%;
+    max-width: 450px;
+    height: 250px;
   }
   
-  .act1 h1{
-    font-weight: 800;
-    color: white;
-    font-size: 40px;
-  }
-  
-  .act2{
-    visibility: hidden;
-  }
-  .acts{
-    background-color: #0097B2;
-    border-radius: 10px;
-    width: 40%;
-    height: 76%;
+  .outputDiv{
+    font-size: 16px;
+    height: 60px;
+    padding: 10px;
   }
 
+  .deleteBtn{
+    width: 40px;
+    height: 20px;
+    font-size: 9px;
+  }
+
+  .input-button {
+    padding: 5px 15px ;
+  }
 }
 
 @media screen and (max-width:825px) {
   .userName{
     font-size: 16px;
   }
+  
 }
   @media screen and (max-width: 768px) {
     body{
@@ -705,6 +741,8 @@ font-family: "arial";
         border-radius: 10px;
       }
       
+
+      /* activity */
       .right{
         display: flex;
         align-items: center;
@@ -713,25 +751,34 @@ font-family: "arial";
         width: 50%;
         height: 100%;
       }
-      
-      .act1{
-        position: absolute;
+
+
+      .modal {
+        width: 80%;
+        max-width: 450px;
+        height: 250px;
       }
       
-      .act1 h1{
-        font-weight: 800;
-        color: white;
-        font-size: 40px;
+      .outputDiv{
+        font-size: 20px;
+        height: 40px;
+        width: 90%;
+        padding: 10px;
       }
-      
-      .act2{
-        visibility: hidden;
+
+      #outputContainer{
+        display: flex;
+        align-items: center;
       }
-      .acts{
-        background-color: #0097B2;
-        border-radius: 10px;
-        width: 45%;
-        height: 79%;
+    
+      .deleteBtn{
+        width: 50px;
+        height: 25px;
+        font-size: 10px;
+      }
+    
+      .input-button {
+        padding: 5px 15px ;
       }
   
     }
