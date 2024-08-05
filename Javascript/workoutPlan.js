@@ -49,13 +49,13 @@ overlayL.addEventListener('click', closeModalL);
 document.querySelector('.close-button-left').addEventListener('click', closeModalL);
 
 document.getElementById('add-post-button-left').addEventListener('click', function() {
-    const userInput = document.getElementById('userInput-left').value;
-    if (userInput) {
+    const userInputs = document.getElementById('userInput-left').value;
+    if (userInputs) {
         const newDiv = document.createElement('div');
         newDiv.className = 'outputDivL';
 
         const span = document.createElement('span');
-        span.textContent = userInput;
+        span.textContent = userInputs;
         newDiv.appendChild(span);
 
         const deleteBtn = document.createElement('button');
@@ -75,6 +75,10 @@ document.getElementById('add-post-button-left').addEventListener('click', functi
         closeModalL(); // Close the modal
         inputButtonL.style.display = 'none'; // Hide the input button
     }
+
+    localStorage.setItem('description', userInputs);
+    const storage =  localStorage.getItem("description");
+    console.log(storage);
 });
 
 
@@ -125,4 +129,8 @@ deleteBtn.addEventListener('click', function() {
 document.getElementById('outputContainer').appendChild(newDiv);
 document.getElementById('userInput').value = ''; // Clear the input field
 }
+
+localStorage.setItem('activity', userInput);
+    const storages =  localStorage.getItem("activity");
+    console.log(storages);
 });

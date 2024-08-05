@@ -164,6 +164,7 @@ font-family: "arial";
 .hamburger{
   padding-inline:20px;
   margin-bottom: 50px;
+  cursor: pointer;
 }
 
 .bar1, .bar2, .bar3 {
@@ -371,6 +372,7 @@ font-family: "arial";
 .modal-title-left {
   font-size: 18px;
   font-family: "nunito";
+  color: black;
 }
 .close-button-left {
   background-color: transparent;
@@ -435,7 +437,9 @@ font-family: "arial";
   font-weight: 800;
   display: flex;
   justify-content: center;
+  align-items: center;
   flex-direction: column;
+  text-align: left;
   row-gap: 10px;
   
 }
@@ -695,6 +699,28 @@ font-family: "arial";
     border-radius: 10px;
   }
   
+  .modal-left {
+    width: 80%;
+    max-width: 450px;
+    height: 250px;
+  }
+  
+  .outputDivL{
+    font-size: 16px;
+    height: 500px;
+    padding: 10px;
+  }
+
+  .deleteBtnL{
+    width: 40px;
+    height: 20px;
+    font-size: 9px;
+  }
+
+  .input-button-left {
+    padding: 5px 15px ;
+  }
+
   .right{
     display: flex;
     align-items: center;
@@ -892,6 +918,33 @@ font-family: "arial";
         border-radius: 10px;
       }
       
+      .modal-left {
+        width: 80%;
+        max-width: 450px;
+        height: 250px;
+      }
+      
+      .outputDivL{
+        font-size: 13px;
+        height: 450px;
+        width: 90%;
+        padding: 10px;
+      }
+
+      #outputContainer-left{
+        display: flex;
+        align-items: center;
+      }
+    
+      .deleteBtnL{
+        width: 50px;
+        height: 25px;
+        font-size: 10px;
+      }
+    
+      .input-button-left {
+        padding: 5px 15px ;
+      }
 
       /* activity */
       .right{
