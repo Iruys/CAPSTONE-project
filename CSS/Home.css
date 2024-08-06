@@ -151,7 +151,7 @@ font-family: "arial";
   overflow: hidden;
   padding-block:10px ;
   width: 5%;
-  height: 725px;
+  height: 650px;
   transition: width 0.3s ease;
 }
 
@@ -284,8 +284,8 @@ font-family: "arial";
 }
 
 .carousel-img{
-  height: 430px;
-  width: 720px;
+  height: 390px;
+  width: 680px;
 } 
 
 .mySlides {display: none}
@@ -455,9 +455,6 @@ img {vertical-align: middle;}
   width: 490px;
 } 
 
-.threeDots{
-  margin-top: 470px;
-}
 }
 
 @media screen and (max-width:1286px) {

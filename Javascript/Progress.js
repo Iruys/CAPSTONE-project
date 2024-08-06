@@ -22,6 +22,53 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 });
 
+//Workout progress
+
+// document.getElementById('add-post-button').addEventListener('click', function() {
+// const userInput = document.getElementById('userInput').value;
+// if (userInput) {
+
+// const newDiv = document.createElement('div');
+// newDiv.className = 'outputDiv';
+
+// const span = document.createElement('span');
+// span.textContent = userInput;
+// newDiv.appendChild(span);
+
+// const deleteBtn = document.createElement('button');
+// deleteBtn.textContent = 'Delete';
+// deleteBtn.className = 'deleteBtn';
+// newDiv.appendChild(deleteBtn);
+
+// deleteBtn.addEventListener('click', function() {
+//   newDiv.remove();
+// });
+
+// document.getElementById('outputContainer').appendChild(newDiv);
+// document.getElementById('userInput').value = ''; // Clear the input field
+// }
+
+// localStorage.setItem('activity', userInput);
+//     const storages =  localStorage.getItem("activity");
+//     console.log(storages);
+// });
+
+
+const addBTNWorkout = document.querySelector('.addWorkoutBtn');
+const inputContWorkout = document.getElementById("input-workout-progress");
+
+addBTNWorkout.addEventListener('click', function(){
+  inputContWorkout.classList.add("showsWorkoutInput");
+  
+});
+
+document.getElementById("xBtnProg").addEventListener('click', function(){
+  inputContWorkout.classList.remove("showsWorkoutInput");
+});
+
+
+
+
 //Feedback function
 
 const fbConts = document.getElementById("fb-conts");
@@ -42,8 +89,6 @@ document.getElementById("submit-btn-fb").addEventListener('click', function (){
     //localStorage
     localStorage.setItem("Feedback", inputFb);
 // Retrieve
-   const storage =  document.getElementById("feedback-conts").innerHTML = localStorage.getItem("feedback");
+    document.getElementById("feedback-conts").innerHTML = localStorage.getItem("feedback");
 
-   console.log(storage);
-  
 });
