@@ -21,3 +21,29 @@ document.addEventListener("DOMContentLoaded", function() {
     ddConts.classList.toggle('ddactive');
   });
 });
+
+//Feedback function
+
+const fbConts = document.getElementById("fb-conts");
+const editBtn = document.getElementById("edit-btn-fb");
+document.getElementById("submit-btn-fb").addEventListener('click', function (){
+  const inputFb = document.getElementById("feedback-conts").value;
+
+  if(inputFb){
+    fbConts.classList.add("shows");
+    editBtn.classList.add("shows-edit");
+    fbConts.innerHTML = inputFb;
+  } 
+  editBtn.addEventListener('click', function(){
+    fbConts.classList.remove("shows");
+    editBtn.classList.remove("shows-edit");
+  })
+   
+    //localStorage
+    localStorage.setItem("Feedback", inputFb);
+// Retrieve
+   const storage =  document.getElementById("feedback-conts").innerHTML = localStorage.getItem("feedback");
+
+   console.log(storage);
+  
+});

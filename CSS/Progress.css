@@ -265,9 +265,9 @@ font-family: "arial";
   justify-content:space-evenly;
   align-items: center;
   height: 100%;
-
 }
 
+/* Weights progress */
 .weightScale{
   height: 100%;
   width: 30%;
@@ -315,10 +315,11 @@ font-weight: 800;
   border: none;
 }
 
+/* WORKOUT progress */
 
 .workoutProg{
   display: flex;
-  align-items: end;
+ align-items: end;
   height: 100%;
   width: 30%;
 }
@@ -328,10 +329,22 @@ font-weight: 800;
   display: flex;
   align-items: center;
   flex-direction: column;
+  justify-content: space-around;
   background-color: #0CC0DF;
   border-radius: 10px;
   height: 95%;
   width: 90%;
+}
+
+.header-progress{
+  border: 1px solid red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 40%;
+  width: 100%;
+  padding: 10px;
 }
 
 .workoutsProg h1{
@@ -340,17 +353,48 @@ font-weight: 800;
   font-family: "nunito";
 }
 
+.progress-percentage{
+  border: 1px solid red;
+  height: 80%;
+  width: 70%;
+}
+
+.input-WOprogress{
+  border: 1px solid red;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  flex-direction: column;
+  padding: 5px;
+  height: 55%;
+  width: 100%;
+}
+
+.noOfExercises{
+  border: 1px solid red;
+  height: 40px;
+  width: 100%;
+}
+
 .addWeightBtn{
   background-color: #5271FF;
   display: flex;
   align-items: center;
   justify-content: space-around;
-  width: 90%;
-  height: 7%;
+  width: 100%;
+  height: 10%;
   border-radius: 10px;
   border: none;
 }
 
+.input-workout-progress{
+  margin-top: -36px;
+  border: 1px solid red;
+  height: 40px;
+  width: 100%;
+}
+
+/* feedback */
 .feedback{
   height: 100%;
   width: 30%;
@@ -363,27 +407,87 @@ font-weight: 800;
   width: 90%;
 }
 
+.feedb{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  row-gap: 10px;
+}
+
 .feedb h1{
   color: white;
   font-weight: 800;
   font-family: "nunito";
 }
 
-.feedb button{
+#submit-btn-fb{
   background-color: #0022B3;
   color: white;
   font-family: "nunito";
   font-size: 16px;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
+  align-self: center;
   width: 40%;
   height: 40px;
   border-radius: 10px;
   border: none;
+  cursor: pointer;
+  transition: transform 0.5s ease;
 }
 
+#submit-btn-fb:active{
+  transform: scale(0.85);
+}
 
+.modal-body textarea {
+  width: 100%;
+  height: 450px;
+  padding: 10px;
+  border-radius: 5px;
+ outline: none;
+ font-family: "nunito";
+  font-size: 16px;
+  resize: none;
+}
+
+#fb-conts{
+  width: 100%;
+  height: 450px;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 16px;
+  font-family: "nunito";
+  background-color: white;
+  margin-top: -465px;
+  visibility: hidden;
+}
+
+#fb-conts.shows{
+  visibility: visible;
+}
+
+#edit-btn-fb{
+  background-color: #0022B3;
+  color: white;
+  font-family: "nunito";
+  font-size: 16px;
+  align-self: center;
+  width: 40%;
+  height: 40px;
+  margin-top: -50px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.5s ease;
+  visibility: hidden;
+}
+
+#edit-btn-fb.shows-edit{
+  visibility: visible;
+}
+
+#edit-btn-fb:active{
+  transform: scale(0.85);
+}
 
 @media screen and (max-width: 1168px) {
   /* header */
@@ -582,46 +686,73 @@ font-weight: 800;
 
       
       /*Main*/
+      
+      .main{
+        overflow: scroll;
+        height: 800px;
+      }
+
       .conts1{
         height: 10%;
+        width: 100%;
+      }
+      .conts2{
+        display: grid;
+        align-items: center;
+        flex-direction: column;
+        border: 2px solid red;
+        padding-block: 0;
+        height: 90%;
         width: 100%;
       }
 
       .progress-container{
         flex-direction: column;
+        height: 100%;
       }
+
       .weightScale{
-        width: 90%;
+        width: 650px;
+        height: 35%;
         display: flex;
         align-items: center;
         justify-content: center;
+        flex-direction: row;
       }
       
       .workoutProg{
-        width: 90%;
+        width: 650px;
+        height: 35%;
         display: flex;
         align-items: center;
         justify-content: center;
+        flex-direction: row;
       }
-      
+
+      .progress-conts{
+        width: 100%;
+        height: 90%;
+      }
+
+      .weights{
+        width: 100%;
+        height: 90%;
+      }
+
       .feedback{
-        width: 90%;
+        width: 650px;
+        height: 35%;
         display: flex;
         align-items: center;
         justify-content: center;
       }
-        .weights{
-          width: 100%;
-          height: 90%;
-        }
-      
-        .progress-conts{
-          width: 100%;
-          height: 90%;
-        }
-        .fb{
-          width: 100%;
-          height: 90%;
-        }
-  
+
+      .fb{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 90%;
+      }
+    
     }

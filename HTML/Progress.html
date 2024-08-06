@@ -62,16 +62,15 @@
 
     <div class="conts2">
       <div class="progress-container">
-
+<!-- //Weight progress -->
         <div class="weightScale">
           <div class="weights">
-
           <div class="weightInfo">
             <h1>Weight</h1>
             <div class="weightChart">
               chart
             </div>
-          </div>
+        </div>
 
           <div class="weightAdd">
             <h1>Latest weight</h1>
@@ -81,28 +80,41 @@
          </div>
         </div>
 
+<!-- //workout progress -->
         <div class="workoutProg">
-          <div class="progress-conts">
-          <div class="workoutsProg">
-            <h1>Workout Progress</h1>
-          </div>
-          <div class="progress-percentage"> </div>  
+            <div class="progress-conts">
 
-          <div class="noOfExercises"></div>
-          <button class="addWeightBtn">Day No. of Exercises<img src="../assets/addBtnWeight.png" alt="" height="30"></button>
+              <div class="header-progress">
+                <div class="workoutsProg">
+                  <h1>Workout Progress</h1>
+                </div>
+                <div class="progress-percentage"> </div>  
+              </div>
+           
+
+            <div class="input-WOprogress">
+              <div class="noOfExercises"></div>
+              <button class="addWeightBtn">Day No. of Exercises<img src="../assets/addBtnWeight.png" alt="" height="30"></button>
+              <div class="input-workout-progress"></div>
+            </div>
           </div>  
         </div>
-     
 
+<!-- //Feedback -->
         <div class="feedback">
+
           <div class="fb">
             <div class="feedb">
               <h1>Feedback</h1>
-              <div class="fb-conts"></div>
-              <button class="submits">Submit
-          </div>
-        </div>
-
+              <div class="modal-body">
+                <textarea id="feedback-conts" placeholder="Suggestions and motivation?"></textarea>
+            </div>        
+              <div id="fb-conts"> </div>
+              <button type="submit"  id ="submit-btn-fb">Submit</button>
+              <button id="edit-btn-fb">Edit</button>
+            </div>
+         </div>
+      
       </div>
     </div>
     </div>
