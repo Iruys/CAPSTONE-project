@@ -219,10 +219,88 @@ font-family: "arial";
 /* main */
 .main{
   width: 100%;
+  height: 590px;
 }
 
+.conts1{
+  display: flex;
+  flex-direction: column;
+  justify-content:space-around;
+  align-items: center;
+  height: 12%;
+  width: 100%;
+}
 
-  
+.page{
+  display: flex;
+  align-items: center;
+  padding-inline: 10px;
+  background-color: white;
+  column-gap: 5px;
+  color: #737373;
+  height: 60%;
+  width: 98%;
+  border-radius: 10px;
+}
+
+.page a{
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #737373;
+}
+
+.page img{
+  margin-right: 5px;
+}
+.conts2{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 95%;
+  padding-inline: 10px;
+}
+
+.recordsConts{
+  background-color: white;
+  border-radius: 10px 10px 0 0;
+  height: 100%;
+  width: 95%;
+  font-family: "roboto";
+}
+
+.head{
+  display: flex;
+  justify-content: center;
+  justify-content: space-around;
+  background-color: #eaeaea;
+  padding: 5px;
+  width: 100%;
+  height: 5%;
+}
+
+.recordsConts h1{
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  height: 10%;
+  font-weight: 500;
+}
+
+#ciRecords{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 85%;
+}
+.sample{
+  border: 1px solid black;
+  width: 100%;
+  height: 10%;
+}
+
 @media screen and (max-width: 1168px) {
   .logo h6{
     font-size: 36px;
@@ -261,11 +339,6 @@ font-family: "arial";
     height: 40px;
   }
  
-  
-.carousel-img{
-  height: 430px;
-  width: 490px;
-} 
 
 }
 
