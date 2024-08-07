@@ -71,17 +71,36 @@ document.getElementById("addBtnExercises").addEventListener('click', function(){
   const firstInput = document.getElementById("done").value;
   const secondInput = document.getElementById("length").value;
   const percentage = (firstInput / secondInput  * 100).toFixed(0);
-  const outputConts = document.getElementById("outConts");
-  const showOutput = document.getElementById("outConts");
   const circleConts = document.getElementById("circleContainer");
 
-  if(percentage){
-    for(let i = 0; i <= 4; i++){
-    outputConts.innerHTML  = `<div>${new Date().toLocaleDateString()}</div>` + firstInput + " Exercises" + `<div>  </div>` + percentage + " %";
-    showOutput.classList.add("showOut");
-  } 
-}
+  if (percentage) {
+    // Create a new div element to contain the output
+    const newDivs = document.createElement('div');
+    newDivs.className = 'outConts';
 
+    // Set the inner HTML of the new div
+    newDivs.innerHTML = 
+        `<div>${new Date().toLocaleDateString()}</div>` + // Current date
+        firstInput + " Exercises" +                        // First input followed by " Exercises"
+        `<div>  </div>` +                                  // Empty div for spacing
+        percentage + " %";                                 // Percentage followed by a percent sign
+
+    // Get the output container element
+    const outputContainer = document.getElementById('outCont');
+
+    // Check if there are already 4 or more child nodes in the output container
+    if (outputContainer.childNodes.length >= 4) {
+        // Remove the first child node to ensure the container has at most 4 children
+        outputContainer.removeChild(outputContainer.firstChild);
+    }
+
+    // Append the new div to the output container
+    outputContainer.appendChild(newDivs);
+
+    // Clear the input fields
+    document.getElementById("done").value = '';
+    document.getElementById("length").value = '';
+}
 
   circleConts.innerHTML = percentage + " %";
 

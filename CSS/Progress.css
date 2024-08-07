@@ -281,7 +281,6 @@ font-family: "arial";
   width: 90%;
 }
 .weightInfo{
-
   height: 50%;
 }
 .weightInfo h1{
@@ -370,14 +369,13 @@ font-weight: 800;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #d1d3d4;
-  border: 10px solid #60646a15;
+  border: 10px solid rgba(255, 255, 255, 0.5);
   width: 140px;
   height: 140px;
   border-radius: 50%;
   font-size: 38px;
-  font-family: "roboto";
-  font-weight: 400;
+  font-family: "nunito";
+  font-weight: 600;
 }
 
 #xBtnProg{
@@ -402,6 +400,7 @@ font-weight: 800;
 #outCont{
   display: flex;
   flex-direction: column;
+  justify-content: space-evenly;
   background-color: transparent;
   border: none;
   width: 100%;
@@ -411,23 +410,17 @@ font-weight: 800;
   height: 220px;
 }
 
-#outConts{
+.outConts{
   background-color: #2d238d;
   height: 45px;
   width: 100%;
   border-radius: 10px;
-  visibility: hidden;
   display: flex;
-  
   justify-content: space-between;
   align-items: center;
   padding: 5px;
   font-size: 14px;
   font-weight: 800;
-}
-
-#outConts.showOut{
-  visibility: visible;
 }
 
 
