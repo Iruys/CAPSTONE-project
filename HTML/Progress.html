@@ -87,7 +87,9 @@
       <div class="workoutsProg">
         <h1>Workout Progress</h1>
       </div>
-      <div class="progress-percentage"> </div>  
+      <div class="progress-percentage"> 
+        <div id="circleContainer">%</div>
+      </div>  
     </div>
 
     <div id="input-WOprogress">
@@ -95,18 +97,21 @@
       <div id="outCont">
         <div id="outConts"> </div>
       </div>
-      <button class="addWorkoutBtn">Day No. of Exercises<img src="../assets/addBtnWeight.png" alt="" height="30"></button>
+      <button class="addWorkoutBtn">No. of Exercises<img src="../assets/addBtnWeight.png" alt="" height="30"></button>
       
       <div id="input-workout-progress">
+
         <button id="xBtnProg">x</button>
         
         <div class="exerciseNo">
+          <label for="done" id="labelDone">No. of  completed:</label>
           <input id="done" type="number" placeholder="">
-          <p>x</p>
+          <label for="lenght" id="noOfEx">No. of Exercises:</label>
           <input id="length" type="number" placeholder="">
+          <button id="addBtnExercises">ADD</button>
         </div>
 
-        <button id="addBtnExercises">ADD</button>
+      
       </div>
     </div>
   </div>
@@ -118,7 +123,7 @@
 
           <div class="fb">
             <div class="feedb">
-              <h1>Feedback</h1>
+              <h1>Instructor Feedback</h1>
               <div class="modal-body">
                 <textarea id="feedback-conts" placeholder="Suggestions and motivation?"></textarea>
             </div>        

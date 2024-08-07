@@ -342,7 +342,7 @@ font-weight: 800;
 }
 
 .header-progress{
-  border: 1px solid red;
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -359,11 +359,26 @@ font-weight: 800;
 }
 
 .progress-percentage{
-  border: 1px solid red;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   height: 80%;
   width: 70%;
 }
 
+#circleContainer{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #d1d3d4;
+  border: 10px solid #60646a15;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  font-size: 38px;
+  font-family: "roboto";
+  font-weight: 400;
+}
 
 #xBtnProg{
   background-color: transparent;
@@ -375,7 +390,6 @@ font-weight: 800;
 }
 
 #input-WOprogress{
-  border: 1px solid red;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -398,13 +412,18 @@ font-weight: 800;
 }
 
 #outConts{
-  border: 2px solid white;
+  background-color: #2d238d;
   height: 45px;
+  width: 100%;
+  border-radius: 10px;
   visibility: hidden;
   display: flex;
+  
   justify-content: space-between;
   align-items: center;
   padding: 5px;
+  font-size: 14px;
+  font-weight: 800;
 }
 
 #outConts.showOut{
@@ -426,7 +445,7 @@ font-weight: 800;
   font-size: 16px;
   color: white;
   font-weight: 800;
-  width: 100%;
+  width: 95%;
   height: 15%;
   border-radius: 10px;
   border: none;
@@ -441,15 +460,14 @@ font-weight: 800;
 #input-workout-progress{
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-evenly;
   border-radius: 10px;
   background-color: #5271FF;
   font-family: "nunito";
   margin-top: -40px;
-  height: 40px;
-  width: 100%;
-  padding-inline: 10px;
-  padding-block: 5px;
+  height: 50px;
+  width: 105%;
+  padding: 5px;
   visibility: hidden;
 }
 
@@ -461,8 +479,28 @@ font-weight: 800;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  width: 40%;
+  width: 100%;
   height: 90%;
+
+}
+
+.exerciseNo p{
+  color: white;
+}
+
+#labelDone{
+color: white;
+font-size: 10px;
+text-align: center;
+font-family: "roboto";
+width: 50px;
+}
+#noOfEx{
+  color: white;
+  font-size: 10px;
+  text-align: center;
+  font-family: "roboto";
+  width: 50px;
 }
 
 :is(#done, #length), input{
@@ -470,16 +508,18 @@ font-weight: 800;
   outline: none;
   width: 40px;
   height: 100%;
+  margin-right: 5px;
 }
 
 #addBtnExercises{
-  width: 60px;
-  height: 90%;
+  width: 50px;
+  height: 80%;
   border-radius: 10px;
   border: none;
-  background-color: #0097B2;
+  background-color: #112C9F;
   color: whitesmoke;
   font-weight: 800;
+  font-size: 12px;
   cursor: pointer;
 }
 
@@ -519,6 +559,8 @@ font-weight: 800;
   color: white;
   font-weight: 800;
   font-family: "nunito";
+  font-size:28px;
+  text-align: center;
 }
 
 #submit-btn-fb{

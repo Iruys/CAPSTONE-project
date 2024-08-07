@@ -70,14 +70,21 @@ document.getElementById("xBtnProg").addEventListener('click', function(){
 document.getElementById("addBtnExercises").addEventListener('click', function(){
   const firstInput = document.getElementById("done").value;
   const secondInput = document.getElementById("length").value;
-  const percentage = (firstInput / secondInput  * 100).toFixed(2);
+  const percentage = (firstInput / secondInput  * 100).toFixed(0);
   const outputConts = document.getElementById("outConts");
   const showOutput = document.getElementById("outConts");
+  const circleConts = document.getElementById("circleContainer");
 
   if(percentage){
-    outputConts.innerHTML  = percentage + " %";
+    for(let i = 0; i <= 4; i++){
+    outputConts.innerHTML  = `<div>${new Date().toLocaleDateString()}</div>` + firstInput + " Exercises" + `<div>  </div>` + percentage + " %";
     showOutput.classList.add("showOut");
   } 
+}
+
+
+  circleConts.innerHTML = percentage + " %";
+
 });
 
 
