@@ -391,11 +391,25 @@ font-weight: 800;
   background-color: transparent;
   border: none;
   width: 100%;
+  font-family: "nunito";
+  color: white;
   padding: 5px;
   height: 220px;
 }
 
+#outConts{
+  border: 2px solid white;
+  height: 45px;
+  visibility: hidden;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+}
 
+#outConts.showOut{
+  visibility: visible;
+}
 
 
 .progressCont{

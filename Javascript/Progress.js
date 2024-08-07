@@ -71,11 +71,12 @@ document.getElementById("addBtnExercises").addEventListener('click', function(){
   const firstInput = document.getElementById("done").value;
   const secondInput = document.getElementById("length").value;
   const percentage = (firstInput / secondInput  * 100).toFixed(2);
-  const outputConts = document.getElementById("outCont");
+  const outputConts = document.getElementById("outConts");
+  const showOutput = document.getElementById("outConts");
 
   if(percentage){
     outputConts.innerHTML  = percentage + " %";
-
+    showOutput.classList.add("showOut");
   } 
 });
 
