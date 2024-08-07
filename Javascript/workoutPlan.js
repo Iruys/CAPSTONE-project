@@ -106,9 +106,10 @@ overlay.addEventListener('click', closeModal);
 document.querySelector('.close-button').addEventListener('click', closeModal);
 
 
-
+//input and output function
 document.getElementById('add-post-button').addEventListener('click', function() {
 const userInput = document.getElementById('userInput').value;
+
 if (userInput) {
 const newDiv = document.createElement('div');
 newDiv.className = 'outputDiv';

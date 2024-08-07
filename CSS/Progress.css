@@ -374,18 +374,31 @@ font-weight: 800;
   cursor: pointer;
 }
 
-.input-WOprogress{
+#input-WOprogress{
   border: 1px solid red;
   display: flex;
   align-items: center;
-  justify-content: end;
+  justify-content: center;
   flex-direction: column;
   padding: 5px;
   height: 55%;
   width: 100%;
 }
 
-.noOfExercises{
+#outCont{
+  display: flex;
+  flex-direction: column;
+  background-color: transparent;
+  border: none;
+  width: 100%;
+  padding: 5px;
+  height: 220px;
+}
+
+
+
+
+.progressCont{
   height: 40px;
   width: 100%;
 }
@@ -414,14 +427,15 @@ font-weight: 800;
 #input-workout-progress{
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
   border-radius: 10px;
   background-color: #5271FF;
   font-family: "nunito";
   margin-top: -40px;
   height: 40px;
   width: 100%;
-  padding: 5px;
+  padding-inline: 10px;
+  padding-block: 5px;
   visibility: hidden;
 }
 
@@ -437,7 +451,7 @@ font-weight: 800;
   height: 90%;
 }
 
-:is(#done, #noOfExercises), input{
+:is(#done, #length), input{
   text-align: center;
   outline: none;
   width: 40px;

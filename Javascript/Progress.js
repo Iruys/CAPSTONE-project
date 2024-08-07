@@ -67,6 +67,17 @@ document.getElementById("xBtnProg").addEventListener('click', function(){
 });
 
 
+document.getElementById("addBtnExercises").addEventListener('click', function(){
+  const firstInput = document.getElementById("done").value;
+  const secondInput = document.getElementById("length").value;
+  const percentage = (firstInput / secondInput  * 100).toFixed(2);
+  const outputConts = document.getElementById("outCont");
+
+  if(percentage){
+    outputConts.innerHTML  = percentage + " %";
+
+  } 
+});
 
 
 //Feedback function
