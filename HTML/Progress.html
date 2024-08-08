@@ -62,23 +62,41 @@
 
     <div class="conts2">
       <div class="progress-container">
-<!-- //Weight progress -->
-        <div class="weightScale">
-          <div class="weights">
-          <div class="weightInfo">
-            <h1>Weight</h1>
-            <div class="weightChart">
-              chart
-            </div>
-        </div>
 
-          <div class="weightAdd">
-            <h1>Latest weight</h1>
-            <div class="LatestWeight">Kg</div>
-            <button class="addWeightBtn">Week Weight<img src="../assets/addBtnWeight.png" alt="" height="30"></button>
+
+
+<!-- //Weight progress -->
+      <div class="weightScale">
+        <div class="weights">
+        <div class="weightInfo">
+          <h1>Weight</h1>
+          <div class="weightChart">
+            <div class="chart-container">
+              <canvas id="myChart"></canvas>
+            </div>
           </div>
-         </div>
+      </div>
+
+        <div class="weightAdd">
+            <div class="kgs"> Kg</div>
+          <div id="outputWeight"></div>
+
+          
+          <button id="addBtnWeights">Weights in kilo<img src="../assets/addBtnWeight.png" alt="" height="30"></button>
+          
+          <div id="inputWeight">
+            <button id="xBtnWeight">x</button>
+            <div class="weightsNo">
+              <label for="weights" id="noOfW">Weights in kilos:</label>
+              <input id="weights" type="number" placeholder="">
+              <button id="addWeights">ADD</button>
+            </div>
+        
+
+          </div>
         </div>
+        </div>
+      </div>
 
 <!-- //workout progress -->
 <div class="workoutProg">
@@ -88,7 +106,10 @@
         <h1>Workout Progress</h1>
       </div>
       <div class="progress-percentage"> 
-        <div id="circleContainer">%</div>
+        <div class="outlineBorder">
+          <div id="circleContainer">%</div>
+        </div>
+ 
       </div>  
     </div>
 

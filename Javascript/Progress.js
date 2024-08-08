@@ -22,37 +22,213 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 });
 
+//chart
+function generateWeeklyData() {
+  const currentDate = new Date();
+  const startOfMonth = new Date(
+    currentDate.getFullYear(),
+    currentDate.getMonth(),
+    1
+  );
+  const endOfMonth = new Date(
+    currentDate.getFullYear(),
+    currentDate.getMonth() + 1,
+    0
+  );
+  const labels = [];
+  const data = [];
+
+  let weekStart = new Date(startOfMonth);
+  while (weekStart <= endOfMonth && weekStart <= currentDate) {
+    const weekEnd = new Date(weekStart);
+    weekEnd.setDate(weekEnd.getDate() + 6);
+
+    if (weekEnd > endOfMonth) {
+      weekEnd.setDate(endOfMonth.getDate());
+    }
+    if (weekEnd > currentDate) {
+      weekEnd.setDate(currentDate.getDate());
+    }
+
+    labels.push(`Week ${Math.ceil((weekStart.getDate() + 1) / 7)}`);
+    data.push({
+      x: new Date(weekStart),
+      y: Math.floor(Math.random() * 50) + 50,
+      days: Array.from(
+        {
+          length: Math.min(
+            7,
+            weekEnd.getDate() - weekStart.getDate() + 1
+          ),
+        },
+        (_, i) => {
+          const day = new Date(weekStart);
+          day.setDate(day.getDate() + i);
+          return {
+            day: day.getDate(),
+            weight: Math.floor(Math.random() * 50) + 50,
+          };
+        }
+      ),
+    });
+
+    weekStart.setDate(weekStart.getDate() + 7);
+  }
+
+  return { labels, data };
+}
+
+const { labels, data } = generateWeeklyData();
+
+const ctx = document.getElementById('myChart').getContext('2d');
+const myChart = new Chart(ctx, {
+  type: 'line',
+  data: {
+    labels: labels,
+    datasets: [
+      {
+        label: 'Weekly Weight Progress',
+        data: data,
+        fill: false,
+        borderColor: 'rgb(75, 192, 192)',
+        backgroundColor: 'rgba(75, 192, 192, 0.2)',
+        tension: 0.3,
+        pointBackgroundColor: 'rgb(75, 192, 192)',
+        pointBorderColor: '#fff',
+        pointHoverBackgroundColor: '#fff',
+        pointHoverBorderColor: 'rgb(75, 192, 192)',
+      },
+    ],
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    scales: {
+      x: {
+        type: 'category',
+        title: {
+          display: true,
+          text: 'Week',
+          color: '#333',
+          font: {
+            family: 'Poppins',
+            size: 14,
+            weight: '500',
+          },
+        },
+        ticks: {
+          color: '#555',
+        },
+        grid: {
+          display: false,
+        },
+      },
+      y: {
+        title: {
+          display: true,
+          text: 'Weight (kg)',
+          color: '#333',
+          font: {
+            family: 'Poppins',
+            size: 14,
+            weight: '500',
+          },
+        },
+        ticks: {
+          color: '#555',
+        },
+        grid: {
+          color: '#eaeaea',
+        },
+      },
+    },
+    plugins: {
+      legend: {
+        display: true,
+        labels: {
+          color: '#333',
+          font: {
+            family: 'Poppins',
+          },
+        },
+      },
+      tooltip: {
+        callbacks: {
+          title: function (tooltipItems) {
+            return `Week ${tooltipItems[0].label.split(' ')[1]}`;
+          },
+          label: function (tooltipItem) {
+            const weekData = tooltipItem.raw;
+            return weekData.days.map(
+              (day) => `Day ${day.day}: ${day.weight} kg\n`
+            );
+          },
+        },
+      },
+    },
+  },
+});
+
+
+
+// input and outputweights
+
+const addBTNWeights = document.querySelector('#addBtnWeights');
+const inputContWeights = document.getElementById("inputWeight");
+
+addBTNWeights.addEventListener('click', function(){
+  inputContWeights.classList.add("showsWeightInput");
+  
+});
+
+document.getElementById("xBtnWeight").addEventListener('click', function(){
+  inputContWeights.classList.remove("showsWeightInput");
+});
+
+
+document.getElementById("addWeights").addEventListener('click', function(){
+  const weightInput = document.getElementById("weights").value;
+  const kilos = document.getElementById("kgs");
+  const kgContainer= document.querySelector(".kgs");
+
+  if (!isNaN(weightInput)) {
+  if (weightInput) {
+    // Create a new div element to contain the output
+    const div = document.createElement('div');
+    div.className = 'weightConts';
+
+    // Set the inner HTML of the new div
+    div.innerHTML = 
+        `<div>${new Date().toLocaleDateString()}</div>` + 
+        `<div>  </div>` +                                  // Empty div for spacing
+        weightInput + " kg";     
+        
+    // Get the output container element
+    const outWeightContainer = document.getElementById('outputWeight');
+
+    // Check if there are already 4 or more child nodes in the output container
+    if (outWeightContainer.childNodes.length >= 2) {
+        // Remove the first child node to ensure the container has at most 4 children
+        outWeightContainer.removeChild(outWeightContainer.firstChild);
+    }
+
+    // Append the new div to the output container
+    outWeightContainer.appendChild(div);
+
+    // Clear the input fields
+    document.getElementById("weights").value = '';
+   
+    }
+  }
+
+  kgContainer.innerHTML = weightInput + " kg";
+
+});
+
+
+
+
 //Workout progress
-
-// document.getElementById('add-post-button').addEventListener('click', function() {
-// const userInput = document.getElementById('userInput').value;
-// if (userInput) {
-
-// const newDiv = document.createElement('div');
-// newDiv.className = 'outputDiv';
-
-// const span = document.createElement('span');
-// span.textContent = userInput;
-// newDiv.appendChild(span);
-
-// const deleteBtn = document.createElement('button');
-// deleteBtn.textContent = 'Delete';
-// deleteBtn.className = 'deleteBtn';
-// newDiv.appendChild(deleteBtn);
-
-// deleteBtn.addEventListener('click', function() {
-//   newDiv.remove();
-// });
-
-// document.getElementById('outputContainer').appendChild(newDiv);
-// document.getElementById('userInput').value = ''; // Clear the input field
-// }
-
-// localStorage.setItem('activity', userInput);
-//     const storages =  localStorage.getItem("activity");
-//     console.log(storages);
-// });
-
 
 const addBTNWorkout = document.querySelector('.addWorkoutBtn');
 const inputContWorkout = document.getElementById("input-workout-progress");
@@ -73,6 +249,7 @@ document.getElementById("addBtnExercises").addEventListener('click', function(){
   const percentage = (firstInput / secondInput  * 100).toFixed(0);
   const circleConts = document.getElementById("circleContainer");
 
+  if (!isNaN(percentage)) {
   if (percentage) {
     // Create a new div element to contain the output
     const newDivs = document.createElement('div');
@@ -83,8 +260,8 @@ document.getElementById("addBtnExercises").addEventListener('click', function(){
         `<div>${new Date().toLocaleDateString()}</div>` + // Current date
         firstInput + " Exercises" +                        // First input followed by " Exercises"
         `<div>  </div>` +                                  // Empty div for spacing
-        percentage + " %";                                 // Percentage followed by a percent sign
-
+        percentage + " %";     
+        
     // Get the output container element
     const outputContainer = document.getElementById('outCont');
 
@@ -100,7 +277,8 @@ document.getElementById("addBtnExercises").addEventListener('click', function(){
     // Clear the input fields
     document.getElementById("done").value = '';
     document.getElementById("length").value = '';
-}
+    }
+  }
 
   circleConts.innerHTML = percentage + " %";
 
