@@ -437,12 +437,9 @@ canvas {
   height: auto;
 }
 
-@media (max-width: 600px) {
-  .chart-container {
-    padding: 0.5rem;
-    border-radius: 0.5rem;
-  }
-}
+
+
+
 /* WORKOUT progress */
 
 .workoutProg{
@@ -558,17 +555,10 @@ canvas {
   font-weight: 800;
 }
 
-
-.progressCont{
-  height: 40px;
-  width: 100%;
-}
-
 .addWorkoutBtn{
   background-color: #5271FF;
   display: flex;
   align-items: center;
-  justify-content: space-around;
   justify-content: space-between;
   padding-inline: 10px;
   font-family: "nunito";
@@ -763,6 +753,10 @@ width: 50px;
 #edit-btn-fb:active{
   transform: scale(0.85);
 }
+
+
+/* Media query */
+
 
 @media screen and (max-width: 1168px) {
   /* header */
@@ -972,61 +966,263 @@ width: 50px;
         width: 100%;
       }
       .conts2{
-        display: grid;
+        display: flex;
+        justify-content: space-evenly;
         align-items: center;
-        flex-direction: column;
         padding-block: 0;
-        height: 90%;
+        height: 145%;
         width: 100%;
+        overflow: scroll;
+        scroll-behavior: smooth;
       }
-
+      
       .progress-container{
         flex-direction: column;
         height: 100%;
       }
 
+
+      /* weight */
+
+      /* chart section */
+      .weights{
+        display: flex;
+        flex-direction: row; 
+        align-items: center;
+        justify-content: space-around;
+        width: 100%;
+        height: 100%;
+        margin-top: -50px;
+      }
       .weightScale{
         width: 650px;
-        height: 35%;
+        height: 30%;
         display: flex;
         align-items: center;
-        justify-content: center;
-        flex-direction: row;
       }
+      .weightInfo{
+        height: 100%;
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        padding: 5px;
+
+      }
+      .chart-container {
+        width: 320px;
+        padding: 0.5rem;
+        border-radius: 0.5rem;
+      }
+
+/* input section of weight progress*/
+      .weightAdd{
+        background-color: rgba(255, 255, 255, 0.4);
+        border-radius: 10px;
+        height: 100%;
+        width: 45%;
+        padding: 5px;
+        
+      }
+
+      .kgs{
+        font-size: 28px;
+        color: #112C9F;
+      }
+
+
+      #outputWeight{
+        padding: 5px;
+      }
+
+      .weightConts{
+        height: 40px;
+        font-size: 16px;
+      }
+
+      #addBtnWeights{
+        font-size: 14px;
+        height: 15%;
+      }
+
+      #inputWeight{
+        margin-top: -49px;
+        height: 45px;
+        width: 100%;
+      }
+
+      #xBtnWeight{
+        font-size: 20px;
+      }
+
+   
+      #noOfW{
+        font-size: 14px;
+        margin-left: 20px;
+        margin-right: 0px;
+      }
+
+      #weights{
+        width: 40px;
+        height: 30px;
+        margin-right: 30px;
+      }
+
+      
+      #addWeights{
+        width: 40px;
+        height: 30px;
+        font-size: 10px;
+      }
+    
+
+      /* Workout plan */
+
+      /* Result area */
       
       .workoutProg{
         width: 650px;
-        height: 35%;
+        height: 30%;
         display: flex;
         align-items: center;
         justify-content: center;
-        flex-direction: row;
       }
 
       .progress-conts{
         width: 100%;
-        height: 90%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        flex-direction: row;
+        padding: 10px;
+        margin-top: -90px;
       }
 
-      .weights{
-        width: 100%;
-        height: 90%;
+      .header-progress{
+        height: 100%;
+        width: 48%;
+        padding: 5px;
+        background-color: rgba(255, 255, 255, 0.4);
+        border-radius: 10px;
       }
+
+      .workoutsProg h1{
+        font-size: 26px;
+      }
+
+      .progress-percentage{
+        height: 60%;
+        width: 50%;
+      }
+
+      #circleContainer{
+        width: 125px;
+        height: 110px;
+        font-size: 30px;
+      }
+
+      .outlineBorder{
+        background: rgba(35, 31, 32, 0.3);
+        width: 95%;
+        height: 70%;
+        border-radius: 50%;
+      }
+
+      #input-WOprogress{
+        padding: 5px;
+        height: 100%;
+        width: 50%;
+        background-color: rgba(255, 255, 255, 0.4);
+        border-radius: 10px;
+      }
+
+       
+      #outCont{
+        width: 90%;
+        padding-inline: 5px;
+        height: 70%;
+      }
+  
+      #xBtnProg{
+        font-size: 20px;
+      }
+ 
+      .progressCont{
+        border: 2px solid red;
+        height: 40px;
+        width: 100%;
+      }
+
+      .addWorkoutBtn{  
+        font-size: 14px;
+        width: 95%;
+        height: 15%;
+      }
+
+      #input-workout-progress{
+        display: flex;
+        margin-top: -50px;
+        height: 50px;
+        width: 100%;
+      }
+
+      :is(#done, #length), input{
+        height: 80%;
+      }
+
+      #addBtnExercises{ 
+        width: 40px;
+        height: 30px;
+        font-size: 10px;
+      }
+
+
+          /* Feedback */
 
       .feedback{
         width: 650px;
-        height: 35%;
+        height: 30%;
         display: flex;
         align-items: center;
         justify-content: center;
       }
 
       .fb{
-        display: flex;
-        align-items: center;
-        justify-content: center;
         width: 100%;
-        height: 90%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 10px;
+        margin-top: -130px;
       }
-    
+
+      
+      #submit-btn-fb{
+        width: 15%;
+        height: 40px;
+      }
+      
+      
+      .modal-body textarea {
+        width: 100%;
+        height: 220px;
+        padding: 10px;
+        border-radius: 5px;
+       outline: none;
+       font-family: "nunito";
+        font-size: 16px;
+        resize: none;
+      }
+      
+      #fb-conts{
+        height: 220px;
+        padding: 10px;
+        margin-top: -235px;
+      }
+
+      #edit-btn-fb{
+          width: 15%;
+        height: 40px;
     }
