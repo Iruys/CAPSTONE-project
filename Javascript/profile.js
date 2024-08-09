@@ -22,3 +22,39 @@ document.addEventListener("DOMContentLoaded", function() {
     ddConts.classList.toggle('ddactive');
   });
 });
+
+
+//Profile
+const profEdit = document.getElementById("profile");
+
+document.getElementById("editbtnProfs").addEventListener('click', function(){
+  profEdit.classList.add("showProfEdit");
+});
+
+document.getElementById("sbmt").addEventListener('click', function() {
+  const FN = document.getElementById("FN").value;
+  const age = document.getElementById("age").value;
+  const address = document.getElementById("address").value;
+  const LN = document.getElementById("LN").value;
+  const gender = document.querySelector('input[name="gender"]:checked').value;
+  const contact = document.getElementById("contact").value;
+  const email = document.getElementById("email").value;
+
+  const FNo = document.getElementById("username");
+  const ageo = document.getElementById("userage");
+  const addresso = document.getElementById("useraddress");
+  const gendero = document.getElementById("usergender");
+  const contacto = document.getElementById("usercontacts");
+  const emailo = document.getElementById("useremail");
+
+  FNo.textContent = FN + " " + LN;
+  ageo.textContent = age;
+  addresso.textContent = address;
+  gendero.textContent = gender;
+  contacto.textContent = contact;
+  emailo.textContent = email;
+
+  profEdit.classList.remove("showProfEdit");
+});
+
+
