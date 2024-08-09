@@ -383,6 +383,14 @@ font-family: "arial";
   margin-right: 50px;
 }
 
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+
 #addWeights{
   width: 50px;
   height: 30px;
@@ -1125,7 +1133,7 @@ width: 50px;
       .outlineBorder{
         background: rgba(35, 31, 32, 0.3);
         width: 95%;
-        height: 70%;
+        height: 67%;
         border-radius: 50%;
       }
 
@@ -1226,3 +1234,4 @@ width: 50px;
           width: 15%;
         height: 40px;
     }
+  }

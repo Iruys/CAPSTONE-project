@@ -271,17 +271,235 @@ font-family: "arial";
   justify-content: center;
   height: 100%;
   width: 50%;
+  padding: 5px;
+}
+
+.profile1{
+  flex-direction: column;
+  position: relative;
 }
 
 #profile, #qr{
  background-color: white;
- height: 95%;
+ height: 100%;
  width: 80%;
  border-radius: 10px;
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+ flex-direction: column;
+ padding: 10px;
+}
+
+#profile{
+  position: absolute;
+  margin-top: -10px;
+  z-index: 999;
+  visibility: hidden;
+}
+
+#profileEdit{
+  z-index: 1;
+  background-color: white;
+  height: 100%;
+  width: 80%;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  padding: 10px;
+  font-family: "roboto";
+ }
+ 
+
+.bottomConts, .midInfoConts, .topEditConts{
+  width: 100%;
+}
+
+.topEditConts{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 33%;
+}
+
+#profPic{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: end;
+  width: 90%;
+  height: 100%;
+  padding-inline-start: 50px;
+  row-gap: 10px;
+}
+
+#profPic img{
+  border-radius: 50%;
+}
+
+#editProf{
+  width: 10%;
+  display: flex;
+  justify-content: center;
+  height: 100%;
+}
+
+#editbtnProf{
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  height: 25%;
+}
+
+
+.midInfoConts{
+  height: 45%;
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.rightContainer{
+  padding: 5px;
+  width: 49%;
+  height: 100%;
+}
+
+.input1{
+  width: 235px;
+  height: inherit;
+  font-weight: 700;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+#FN,#age,#address{
+  height: 35px;
+  width: 80%;
+  padding: 10px;
+  font-size: 16px;
+  background-color: #dbe0f4;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  color: #112c9f;
 }
 
 
 
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.input1 label{
+  font-size: 14px;
+  font-weight: 00;
+  color: #112c9f;
+}
+
+.leftContainer{
+  padding: 5px;
+  width: 49%;
+  height: 100%;
+}
+
+.input2{
+  width: 235px;
+  height: inherit;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+#LN,#sex,#contact{
+  height: 35px; 
+  width: 80%;
+  padding: 10px;
+  font-size: 16px;
+  background-color: #dbe0f4;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  color: #112c9f;
+}
+
+
+.radioBtn label{
+  margin-right: 20px;
+}
+
+
+.radioBtn{
+  display: flex;
+  align-items: center;
+  height: 38.5px;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.input2 label{
+  font-size: 14px;
+  font-weight: 700;
+  color: #112c9f;
+}
+
+
+.bottomConts{
+  height: 21%; 
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.emailSubmit{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  padding-inline: 10px;
+}
+
+.emailSubmit label{
+  font-size: 14px;
+  font-weight: 00;
+  color: #112c9f;
+}
+#email{
+  height: 35px; 
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  background-color: #dbe0f4;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  color: #112c9f;
+}
+
+#sbmt{
+  align-self: center;
+  background-color: #112c9f;
+  height: 35%;
+  width: 90%;
+  color: white;
+  font-size: 20px;
+  font-weight: 700;
+  border-radius: 10px;
+  cursor: pointer;
+}
 
   
 @media screen and (max-width: 1168px) {
