@@ -786,4 +786,110 @@ input[type="number"]::-webkit-outer-spin-button {
       
       /*Main*/
 
+      .main{
+        overflow-y: auto;
+        scroll-behavior: smooth;
+      }
+
+        .conts2{
+          display: flex;
+          flex-direction: column;
+        }
+
+        .profile1{
+          width: 100%;
+         }
+         
+        .profile2{
+          width: 100%;
+          height: 50%;
+        }
+        #profile{
+          display: flex;
+          flex-direction: row;
+        }
+
+        .line{
+          width: 1px;
+          height: 95%;
+        }
+
+        .topConts{
+          height: 90%;
+          width: 50%;
+        }
+
+
+        .botConts{
+          height: 90%;
+          width: 50%;
+        }
+      
+        #editProfs{
+          width: 20%;
+        }
+
+        .user{
+          padding: 10px;
+          height: 15%;
+          width: 100%;
+          font-size: 14px;
+        }
+        
+        .outpt{
+          display: flex;
+          align-items: center;
+          font-size: 18px;
+          height: 80%;
+          width: 80%;
+        }
+        
+        .user h3{
+          width: 20%;
+        }
+        
+        .userCn h3{
+          width: 90px;
+        }
+        .userCn div{
+          width: 130px;
+        }
+
+        .users div{
+          margin-left: 15px;
+        }
+        
+        .userss div{
+          margin-left: -5px;
+        }
+        
+        .usersss div{
+          margin-left: -10px;
+        }
+
+        #profPic img{
+        height: 100px;
+        }
+
+        #FN,#age,#address,#LN,#sex,#contact, #email{
+          height: 30px;
+          font-size: 14px;
+        }
+        
+        .input1 label, .input2 label, .emailSubmit label{
+          font-size: 12px;
+          font-weight: 800;
+          font-weight: 00;
+          color: #112c9f;
+        }
+
+        .bottomConts{
+          height: 35%;
+        }
+
+        #sbmt{  
+          height: 30%;
+        }
+
   }
+
