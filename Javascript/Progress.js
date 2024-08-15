@@ -172,17 +172,18 @@ const myChart = new Chart(ctx, {
 
 
 // input and outputweights
-
+const addBtnWeight = document.getElementById("addBtnWeights");
 const addBTNWeights = document.querySelector('#addBtnWeights');
 const inputContWeights = document.getElementById("inputWeight");
 
 addBTNWeights.addEventListener('click', function(){
   inputContWeights.classList.add("showsWeightInput");
-  
+  addBtnWeight.classList.add("hideAddBtnWeight");
 });
 
 document.getElementById("xBtnWeight").addEventListener('click', function(){
   inputContWeights.classList.remove("showsWeightInput");
+  addBtnWeight.classList.remove("hideAddBtnWeight");
 });
 
 
@@ -235,11 +236,13 @@ const inputContWorkout = document.getElementById("input-workout-progress");
 
 addBTNWorkout.addEventListener('click', function(){
   inputContWorkout.classList.add("showsWorkoutInput");
-  
+
+  addBTNWorkout.classList.add("hideWorkoutBtn");
 });
 
 document.getElementById("xBtnProg").addEventListener('click', function(){
   inputContWorkout.classList.remove("showsWorkoutInput");
+  addBTNWorkout.classList.remove("hideWorkoutBtn");
 });
 
 

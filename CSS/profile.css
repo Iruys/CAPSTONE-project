@@ -1,19 +1,24 @@
-*,*::before,*::after{
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
-*{
+* {
   margin: 0;
   padding: 0;
 }
 
-body{
+body {
   background-image: url(../assets/BG.png);
+  background-size: cover;
+  background-position: center center;
   background-repeat: no-repeat;
-} 
+  min-height: 100vh;
+}
 
 /* header */
-header{
+header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -24,24 +29,24 @@ header{
   z-index: 1;
 }
 
-.logo{
+.logo {
   padding-inline: 10px;
   display: flex;
   align-items: center;
-  justify-content:left;
+  justify-content: left;
   width: 80%;
   height: 100px;
   column-gap: 20px;
 }
 
-.logo h6{
+.logo h6 {
   color: white;
   font-size: 50px;
   font-weight: 400;
   letter-spacing: 2px;
 }
 
-.left-container{
+.left-container {
   display: flex;
   justify-content: space-between;
   flex-direction: column;
@@ -50,7 +55,7 @@ header{
   height: inherit;
 }
 
-.userProfil{ 
+.userProfil {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -59,7 +64,7 @@ header{
   cursor: pointer;
 }
 
-.userProfil a{
+.userProfil a {
   text-decoration: none;
   display: flex;
   justify-content: space-evenly;
@@ -69,31 +74,31 @@ header{
   transition: border 0.3s ease-in-out, background-color 0.3s ease-in-out;
 }
 
-.userProfil a:hover{
+.userProfil a:hover {
   border: 2px solid #3870ff;
 }
 
-.userProfil a:active{
+.userProfil a:active {
   background-color: rgba(58, 114, 255, 0.2);
 }
 
-.img-container{
+.img-container {
   display: flex;
   align-items: center;
   border-radius: 50%;
   border: 3px solid white;
 }
-.img-container img{
+.img-container img {
   border-radius: 50%;
 }
 
-.userName{
-color: white;
-font-size: 26px;
-font-family: "arial";
+.userName {
+  color: white;
+  font-size: 26px;
+  font-family: 'arial';
 }
 
-.consts-dropDown{
+.consts-dropDown {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -102,14 +107,13 @@ font-family: "arial";
   height: 40px;
 }
 
-.dropDown{
+.dropDown {
   background-color: transparent;
   border: none;
   cursor: pointer;
 }
 
-
-.DD-container{
+.DD-container {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -122,14 +126,14 @@ font-family: "arial";
   overflow: hidden;
 }
 
-.DD-container.ddactive{
+.DD-container.ddactive {
   height: 150px;
 }
 
-.logOutBtn{
-  background-color: #112C9F;
+.logOutBtn {
+  background-color: #112c9f;
   color: white;
-  font-family: "nunito";
+  font-family: 'nunito';
   font-size: 20px;
   border: none;
   font-weight: 800;
@@ -151,7 +155,7 @@ font-family: "arial";
   overflow: hidden;
   padding-block:10px ;
   width: 5%;
-  height: 650px;
+  height: 725px;
   transition: width 0.3s ease;
 }
 
@@ -215,34 +219,33 @@ font-family: "arial";
   transition-delay: 0s;
 }
 
-
 /* main */
-.main{
+.main {
   width: 100%;
 }
 
-.main{
+.main {
   width: 100%;
 }
 
-.conts1{
+.conts1 {
   display: flex;
   flex-direction: column;
-  justify-content:space-around;
+  justify-content: space-around;
   align-items: center;
   padding: 5px;
   height: 10%;
   width: 100%;
 }
-.conts2{
+.conts2 {
   display: flex;
-  justify-content:space-evenly;
+  justify-content: space-evenly;
   align-items: center;
   height: 90%;
   width: 100%;
 }
 
-.page{
+.page {
   display: flex;
   align-items: center;
   padding-inline: 10px;
@@ -250,22 +253,23 @@ font-family: "arial";
   column-gap: 5px;
   color: #737373;
   height: 60%;
-  width: 98%;
+  width: 100%;
   border-radius: 10px;
 }
 
-.page a{
+.page a {
   display: flex;
   align-items: center;
   text-decoration: none;
   color: #737373;
 }
 
-.page img{
+.page img {
   margin-right: 5px;
 }
 
-.profile1, .profile2{
+.profile1,
+.profile2 {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -274,46 +278,48 @@ font-family: "arial";
   padding: 5px;
 }
 
-.profile1{
+.profile1 {
   flex-direction: column;
   position: relative;
 }
 
-#profile, #qr{
- background-color: white;
- height: 100%;
- width: 80%;
- border-radius: 10px;
- display: flex;
- align-items: center;
- justify-content: space-between;
- flex-direction: column;
- padding: 10px;
+#profile,
+#qr {
+  background-color: white;
+  height: 100%;
+  width: 80%;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  padding: 10px;
 }
 
-#profile{
+#profile {
   position: absolute;
-  margin-top: -10px;
   z-index: 999;
-  font-family: "roboto";
+  font-family: 'roboto';
+  margin-top: 10px;
 }
 
-#profile.showProfEdit{
+#profile.showProfEdit {
   visibility: hidden;
- }
+}
 
-.topConts,.botConts{
+.topConts,
+.botConts {
   width: 100%;
 }
 
-.topConts{
+.topConts {
   height: 40%;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-#profPics{
+#profPics {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -325,18 +331,18 @@ font-family: "arial";
   font-size: 22px;
 }
 
-#profPics img{
+#profPics img {
   border-radius: 50%;
 }
 
-#editProfs{
+#editProfs {
   width: 10%;
   display: flex;
   justify-content: center;
   height: 100%;
 }
 
-#editbtnProfs{
+#editbtnProfs {
   background-color: transparent;
   border: none;
   cursor: pointer;
@@ -344,7 +350,7 @@ font-family: "arial";
   height: 25%;
 }
 
-.botConts{
+.botConts {
   height: 60%;
   display: flex;
   flex-direction: column;
@@ -353,7 +359,7 @@ font-family: "arial";
   padding: 10px;
 }
 
-.user{
+.user {
   display: flex;
   align-items: center;
   column-gap: 10px;
@@ -363,24 +369,23 @@ font-family: "arial";
   color: #112c9f;
 }
 
-.user h3{
+.user h3 {
   width: 38%;
 }
 
-.users div{
+.users div {
   margin-left: -60px;
 }
 
-.userss div{
+.userss div {
   margin-left: -90px;
 }
 
-.usersss div{
+.usersss div {
   margin-left: -120px;
 }
 
-
-.outpt{
+.outpt {
   display: flex;
   align-items: center;
   font-size: 24px;
@@ -388,13 +393,13 @@ font-family: "arial";
   width: 100%;
 }
 
-.line{
+.line {
   border: 1px solid black;
   height: 0.1%;
   width: 90%;
 }
 
-#profileEdit{
+#profileEdit {
   z-index: 1;
   background-color: white;
   height: 100%;
@@ -405,22 +410,23 @@ font-family: "arial";
   justify-content: space-between;
   flex-direction: column;
   padding: 10px;
-  font-family: "roboto";
- }
- 
+  font-family: 'roboto';
+}
 
-.bottomConts, .midInfoConts, .topEditConts{
+.bottomConts,
+.midInfoConts,
+.topEditConts {
   width: 100%;
 }
 
-.topEditConts{
+.topEditConts {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 33%;
 }
 
-#profPic{
+#profPic {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -430,11 +436,11 @@ font-family: "arial";
   row-gap: 10px;
 }
 
-#profPic img{
+#profPic img {
   border-radius: 50%;
 }
 
-#editbtnProf{
+#editbtnProf {
   background-color: transparent;
   border: none;
   cursor: pointer;
@@ -442,8 +448,7 @@ font-family: "arial";
   height: 25%;
 }
 
-
-.midInfoConts{
+.midInfoConts {
   height: 45%;
   width: 90%;
   display: flex;
@@ -451,13 +456,13 @@ font-family: "arial";
   justify-content: space-around;
 }
 
-.rightContainer{
+.rightContainer {
   padding: 5px;
   width: 49%;
   height: 100%;
 }
 
-.input1{
+.input1 {
   width: 235px;
   height: inherit;
   font-weight: 700;
@@ -466,7 +471,9 @@ font-family: "arial";
   justify-content: space-around;
 }
 
-#FN,#age,#address{
+#FN,
+#age,
+#address {
   height: 35px;
   width: 80%;
   padding: 10px;
@@ -478,27 +485,25 @@ font-family: "arial";
   color: #112c9f;
 }
 
-
-
-input[type="number"]::-webkit-inner-spin-button,
-input[type="number"]::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
-.input1 label{
+.input1 label {
   font-size: 14px;
   font-weight: 00;
   color: #112c9f;
 }
 
-.leftContainer{
+.leftContainer {
   padding: 5px;
   width: 49%;
   height: 100%;
 }
 
-.input2{
+.input2 {
   width: 235px;
   height: inherit;
   display: flex;
@@ -506,8 +511,10 @@ input[type="number"]::-webkit-outer-spin-button {
   justify-content: space-around;
 }
 
-#LN,#sex,#contact{
-  height: 35px; 
+#LN,
+#sex,
+#contact {
+  height: 35px;
   width: 80%;
   padding: 10px;
   font-size: 16px;
@@ -518,40 +525,37 @@ input[type="number"]::-webkit-outer-spin-button {
   color: #112c9f;
 }
 
-
-.radioBtn label{
+.radioBtn label {
   margin-right: 20px;
 }
 
-
-.radioBtn{
+.radioBtn {
   display: flex;
   align-items: center;
   height: 38.5px;
 }
 
-input[type="number"]::-webkit-inner-spin-button,
-input[type="number"]::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
-.input2 label{
+.input2 label {
   font-size: 14px;
   font-weight: 700;
   color: #112c9f;
 }
 
-
-.bottomConts{
-  height: 21%; 
+.bottomConts {
+  height: 21%;
   width: 90%;
   display: flex;
   align-items: center;
   justify-content: space-around;
 }
 
-.emailSubmit{
+.emailSubmit {
   height: 100%;
   width: 100%;
   display: flex;
@@ -560,13 +564,13 @@ input[type="number"]::-webkit-outer-spin-button {
   padding-inline: 10px;
 }
 
-.emailSubmit label{
+.emailSubmit label {
   font-size: 14px;
   font-weight: 00;
   color: #112c9f;
 }
-#email{
-  height: 35px; 
+#email {
+  height: 35px;
   width: 100%;
   padding: 10px;
   font-size: 16px;
@@ -577,7 +581,7 @@ input[type="number"]::-webkit-outer-spin-button {
   color: #112c9f;
 }
 
-#sbmt{
+#sbmt {
   align-self: center;
   background-color: #112c9f;
   height: 35%;
@@ -589,307 +593,305 @@ input[type="number"]::-webkit-outer-spin-button {
   cursor: pointer;
 }
 
-  
 @media screen and (max-width: 1168px) {
-  .logo h6{
+  .logo h6 {
     font-size: 36px;
     flex-wrap: nowrap;
   }
 
-  .userName{
-  color: white;
-  font-size: 18px;
-  font-family: "arial";
+  .userName {
+    color: white;
+    font-size: 18px;
+    font-family: 'arial';
   }
-  
-  .dropDown img{
+
+  .dropDown img {
     height: 30px;
     width: 30px;
   }
-  
-  a img{
+
+  a img {
     height: 33px;
   }
 
-  .bar1, .bar2, .bar3 {
+  .bar1,
+  .bar2,
+  .bar3 {
     width: 33px;
     height: 5px;
   }
-  .DD-container.ddactive{
+  .DD-container.ddactive {
     height: 130px;
   }
-  .DD-container{
+  .DD-container {
     margin-top: 100px;
   }
-  
-  .logOutBtn{
+
+  .logOutBtn {
     font-size: 16px;
     width: 130px;
     height: 40px;
   }
- 
-
-
 }
 
-@media screen and (max-width:1286px) {
-  .userName{
-    font-size: 16px;
-  }
-
-}
-
-@media screen and (max-width:1160px) {
-  .userName{
-    font-size: 16px;
-  }
-
-}
-
-@media screen and (max-width:1040px) {
-  .userName{
-    font-size: 16px;
-  }
-
-}
-
-@media screen and (max-width:993px) {
-  .userName{
+@media screen and (max-width: 1286px) {
+  .userName {
     font-size: 16px;
   }
 }
 
-@media screen and (max-width:923px) {
-  .userName{
-    font-size: 16px;
-  }
-
-}
-
-
-
-@media screen and (max-width:876px) {
-  .userName{
+@media screen and (max-width: 1160px) {
+  .userName {
     font-size: 16px;
   }
 }
 
-@media screen and (max-width:825px) {
-  .userName{
+@media screen and (max-width: 1040px) {
+  .userName {
     font-size: 16px;
   }
 }
 
-  @media screen and (max-width: 768px) {
-    body{
-      background-image: url(../assets/BGM.png);
-      background-repeat: no-repeat;
-      background-size: cover;
-      overflow: hidden;
-      }
+@media screen and (max-width: 993px) {
+  .userName {
+    font-size: 16px;
+  }
+}
 
-      /* header */
-      header{
-        width: auto;
-        height: 70px;
-      }
+@media screen and (max-width: 923px) {
+  .userName {
+    font-size: 16px;
+  }
+}
 
-      a img{
-        height: 30px;
-      }
-      .logo{
-        padding-inline: 10px;
-        display: flex;
-        align-items: center;
-        justify-content:left;
-        width: 50%;
-        height: 100%;
-        column-gap: 20px;
-      }
+@media screen and (max-width: 876px) {
+  .userName {
+    font-size: 16px;
+  }
+}
 
-      .logo img{
-        height: 55px;
-      }
+@media screen and (max-width: 825px) {
+  .userName {
+    font-size: 16px;
+  }
+}
 
-      .logo h6{
-        font-size: 24px;
-      }
-
-      .dropDown img{
-        height: 20px;
-        width: 20px;
-      }
-
-      .DD-container{
-        margin-top: 70px;
-      }
-      .DD-container.ddactive{
-        height: 110px;
-      }
-      
-      .logOutBtn{
-        background-color: #112C9F;
-        color: white;
-        font-family: "nunito";
-        font-size: 20px;
-        border: none;
-        font-weight: 800;
-        border-radius: 10px;
-        width: 140px;
-        height: 50px;
-      }
-
-      .logOutBtn{
-        font-size: 14px;
-        width: 120px;
-        height: 30px;
-      }
-      /* nav bar */
-      .container{
-        display: flex;
-        height: 750px;
-      }
-      
-      .hamburger{
-        padding-inline: 15px;
-        margin-bottom: 35px;
-      }
-
-      .nav {
-        background-color: rgba(255, 255, 255, 0.2);
-        width: 8%;
-        height: 100%;
-      }
-      
-      .bar1, .bar2, .bar3 {
-        width: 20px;
-        height: 3px;
-      }
-      .change .bar1 {
-        transform: translate(0, 7px) rotate(-45deg);
-      }
-
-      a img{
-        height: 30px;
-      }
-      
-      .menu a{
-        height: 60px;
-        font-size: 12px;
-        padding-inline: 12px;
-      }
-
-      .userName{
-        font-size: 14px;
-        }
-        
-      
-      /*Main*/
-
-      .main{
-        overflow-y: auto;
-        scroll-behavior: smooth;
-      }
-
-        .conts2{
-          display: flex;
-          flex-direction: column;
-        }
-
-        .profile1{
-          width: 100%;
-         }
-         
-        .profile2{
-          width: 100%;
-          height: 50%;
-        }
-        #profile{
-          display: flex;
-          flex-direction: row;
-        }
-
-        .line{
-          width: 1px;
-          height: 95%;
-        }
-
-        .topConts{
-          height: 90%;
-          width: 50%;
-        }
-
-
-        .botConts{
-          height: 90%;
-          width: 50%;
-        }
-      
-        #editProfs{
-          width: 20%;
-        }
-
-        .user{
-          padding: 10px;
-          height: 15%;
-          width: 100%;
-          font-size: 14px;
-        }
-        
-        .outpt{
-          display: flex;
-          align-items: center;
-          font-size: 18px;
-          height: 80%;
-          width: 80%;
-        }
-        
-        .user h3{
-          width: 20%;
-        }
-        
-        .userCn h3{
-          width: 90px;
-        }
-        .userCn div{
-          width: 130px;
-        }
-
-        .users div{
-          margin-left: 15px;
-        }
-        
-        .userss div{
-          margin-left: -5px;
-        }
-        
-        .usersss div{
-          margin-left: -10px;
-        }
-
-        #profPic img{
-        height: 100px;
-        }
-
-        #FN,#age,#address,#LN,#sex,#contact, #email{
-          height: 30px;
-          font-size: 14px;
-        }
-        
-        .input1 label, .input2 label, .emailSubmit label{
-          font-size: 12px;
-          font-weight: 800;
-          font-weight: 00;
-          color: #112c9f;
-        }
-
-        .bottomConts{
-          height: 35%;
-        }
-
-        #sbmt{  
-          height: 30%;
-        }
-
+@media screen and (max-width: 768px) {
+  body {
+    background-image: url(../assets/BGM.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
   }
 
+  /* header */
+  header {
+    width: auto;
+    height: 70px;
+  }
+
+  a img {
+    height: 30px;
+  }
+  .logo {
+    padding-inline: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    width: 50%;
+    height: 100%;
+    column-gap: 20px;
+  }
+
+  .logo img {
+    height: 55px;
+  }
+
+  .logo h6 {
+    font-size: 24px;
+  }
+
+  .dropDown img {
+    height: 20px;
+    width: 20px;
+  }
+
+  .DD-container {
+    margin-top: 70px;
+  }
+  .DD-container.ddactive {
+    height: 110px;
+  }
+
+  .logOutBtn {
+    background-color: #112c9f;
+    color: white;
+    font-family: 'nunito';
+    font-size: 20px;
+    border: none;
+    font-weight: 800;
+    border-radius: 10px;
+    width: 140px;
+    height: 50px;
+  }
+
+  .logOutBtn {
+    font-size: 14px;
+    width: 120px;
+    height: 30px;
+  }
+  /* nav bar */
+  .container {
+    display: flex;
+    height: 750px;
+  }
+
+  .hamburger {
+    padding-inline: 15px;
+    margin-bottom: 35px;
+  }
+
+  .nav {
+    background-color: rgba(255, 255, 255, 0.2);
+    width: 8%;
+    height: 100%;
+  }
+
+  .bar1,
+  .bar2,
+  .bar3 {
+    width: 20px;
+    height: 3px;
+  }
+  .change .bar1 {
+    transform: translate(0, 7px) rotate(-45deg);
+  }
+
+  a img {
+    height: 30px;
+  }
+
+  .menu a {
+    height: 60px;
+    font-size: 12px;
+    padding-inline: 12px;
+  }
+
+  .userName {
+    font-size: 14px;
+  }
+
+  /*Main*/
+
+  .main {
+    overflow-y: auto;
+    scroll-behavior: smooth;
+  }
+
+  .conts2 {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .profile1 {
+    width: 100%;
+  }
+
+  .profile2 {
+    width: 100%;
+    height: 50%;
+  }
+  #profile {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .line {
+    width: 1px;
+    height: 95%;
+  }
+
+  .topConts {
+    height: 90%;
+    width: 50%;
+  }
+
+  .botConts {
+    height: 90%;
+    width: 50%;
+  }
+
+  #editProfs {
+    width: 20%;
+  }
+
+  .user {
+    padding: 10px;
+    height: 15%;
+    width: 100%;
+    font-size: 14px;
+  }
+
+  .outpt {
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    height: 80%;
+    width: 80%;
+  }
+
+  .user h3 {
+    width: 20%;
+  }
+
+  .userCn h3 {
+    width: 90px;
+  }
+  .userCn div {
+    width: 130px;
+  }
+
+  .users div {
+    margin-left: 15px;
+  }
+
+  .userss div {
+    margin-left: -5px;
+  }
+
+  .usersss div {
+    margin-left: -10px;
+  }
+
+  #profPic img {
+    height: 100px;
+  }
+
+  #FN,
+  #age,
+  #address,
+  #LN,
+  #sex,
+  #contact,
+  #email {
+    height: 30px;
+    font-size: 14px;
+  }
+
+  .input1 label,
+  .input2 label,
+  .emailSubmit label {
+    font-size: 12px;
+    font-weight: 800;
+    font-weight: 00;
+    color: #112c9f;
+  }
+
+  .bottomConts {
+    height: 35%;
+  }
+
+  #sbmt {
+    height: 30%;
+  }
+}
