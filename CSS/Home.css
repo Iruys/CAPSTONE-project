@@ -146,6 +146,7 @@ header {
 
 .container{
   display: flex;
+  min-height: 50vh;
 }
 
 .nav {
@@ -155,8 +156,9 @@ header {
   overflow: hidden;
   padding-block:10px ;
   width: 5%;
-  height: 725px;
+  min-height:50vh;
   transition: width 0.3s ease;
+ 
 }
 
 .hamburger{
@@ -226,6 +228,8 @@ header {
   align-items: center;
   flex-direction: column;
   width: 100%;
+  min-height: 88vh;
+  border: 2px solid red;
 }
 
 .conts1 {

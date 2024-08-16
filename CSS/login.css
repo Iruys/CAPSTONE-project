@@ -96,6 +96,7 @@ font-family: "Nunito";
 border-radius: 10px;
 font-size: 20px;
 cursor: pointer;
+border: none;
 width: 450px;
 transition:  transform 0.2s ease-in-out;
 }
