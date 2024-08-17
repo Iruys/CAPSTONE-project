@@ -146,6 +146,7 @@ header {
 
 .container{
   display: flex;
+  min-height: 50vh;
 }
 
 .nav {
@@ -155,7 +156,7 @@ header {
   overflow: hidden;
   padding-block:10px ;
   width: 5%;
-  height: 725px;
+  min-height: 50vh;
   transition: width 0.3s ease;
 }
 
@@ -222,10 +223,7 @@ header {
 /* main */
 .main {
   width: 100%;
-}
-
-.main {
-  width: 100%;
+  min-height: 87.9vh;
 }
 
 .conts1 {
@@ -268,22 +266,41 @@ header {
   margin-right: 5px;
 }
 
-.profile1,
-.profile2 {
+.profile1{
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100%;
+  height: 90%;
   width: 50%;
   padding: 5px;
-}
-
-.profile1 {
   flex-direction: column;
   position: relative;
 }
 
-#profile,
+.profile2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 90%;
+  width: 50%;
+  padding: 5px;
+}
+
+
+#profile{
+  background-color: white;
+  height: 100%;
+  width: 80%;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  padding: 10px;
+  position: absolute;
+  z-index: 999;
+  font-family: 'roboto';
+}
 #qr {
   background-color: white;
   height: 100%;
@@ -296,23 +313,18 @@ header {
   padding: 10px;
 }
 
-#profile {
-  position: absolute;
-  z-index: 999;
-  font-family: 'roboto';
-  margin-top: 10px;
-}
 
 #profile.showProfEdit {
   visibility: hidden;
 }
 
-.topConts,
+
 .botConts {
   width: 100%;
 }
 
 .topConts {
+  width: 100%;
   height: 40%;
   display: flex;
   align-items: center;

@@ -145,6 +145,7 @@ font-family: "arial";
 /* nav */
 .container{
   display: flex;
+  min-height: 50vh;
 }
 
 .nav {
@@ -154,7 +155,7 @@ font-family: "arial";
   overflow: hidden;
   padding-block:10px ;
   width: 5%;
-  height: 725px;
+  min-height: 50vh;
   transition: width 0.3s ease;
 }
 
@@ -221,6 +222,7 @@ font-family: "arial";
 /* main */
 .main{
   width: 100%;
+  min-height: 87.9vh;
 }
 
 .conts1{
