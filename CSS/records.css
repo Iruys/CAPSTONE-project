@@ -221,8 +221,12 @@ font-family: "arial";
 
 /* main */
 .main{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
   width: 100%;
-  min-height: 87.9vh;
+  min-height: 87vh;
 }
 
 .conts1{
