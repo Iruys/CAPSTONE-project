@@ -98,11 +98,6 @@ font-size: 20px;
 cursor: pointer;
 border: none;
 width: 450px;
-transition:  transform 0.2s ease-in-out;
-}
-
-.SU:active{
-  transform: scale(0.90);
 }
 
 ion-icon{

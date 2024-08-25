@@ -114,6 +114,7 @@ border-radius: 10px;
 padding: 5px;
 width: 100%;
 border: none;
+cursor: pointer;
 }
 
 .inputs-wrap a, .inputs-wrap p{

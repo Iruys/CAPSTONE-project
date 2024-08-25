@@ -1,4 +1,8 @@
-<!-- <!DOCTYPE html>
+<?php
+include "database.php";
+?>
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -50,4 +54,16 @@
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
-</html> -->
+</html>
+<?php
+if (isset($_POST["submitBtn"])) {
+  $email = filter_input(INPUT_POST, "emails", FILTER_SANITIZE_SPECIAL_CHARS);
+  $password = $_POST["passwords"];
+
+  if ($email == "Admin@admin.com" && $password == "AdminPassword123") {
+    echo "<script>alert('You are sign in !')</script>";
+  } else {
+    echo "Wrong email or password";
+  }
+}
+?>
