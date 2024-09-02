@@ -21,7 +21,7 @@
   <div class="conts1">
 
     <div class="form-wrap">
-      <form action="" method="get">
+      <form action="<?php htmlspecialchars(($_SERVER["PHP_SELF"]))?>" method="post">
 
         <div class="ttl-wrap">
           <p id="login-ttl">SIGN UP</p>
@@ -40,13 +40,25 @@
           </select>
           
           <label for="email"> <ion-icon name="mail-outline"></ion-icon>Email</label>
+  
           <input type="email" name="email" id="email" class="in" required>
+
+
           <label for="username"> <ion-icon name="person"></ion-icon> Username</label>
+
           <input type="text" name="username" id="username" class="in"  required>
+
+
           <label for="passw"><ion-icon name="lock-closed"></ion-icon> Password</label>
+
           <input type="password" name="password" id="passw"  class="in"  required>
+
+
           <label for="conPassw"><ion-icon name="checkmark-outline"></ion-icon> Confirm Password</label>
+
           <input type="password" name="cpassword"  id="conPassw" class="in"  required>
+
+
           <label for="terms"> <input type="checkbox" id="terms" value="Terms">I agree to the <a href="">Terms of Service</a> </label>
         
           <label for="policy"> <input type="checkbox" id="policy" value="Policy">I agree to the<a href="">Data Privacy Policy</a>  </label>
@@ -73,16 +85,22 @@
 </html>
 
 <?php
-if (isset($_POST["submitbtn"])) {
-  $email = filter_input(INPUT_POST, "email", FILTER_SANITIZE_SPECIAL_CHARS);
-  $username = filter_input(INPUT_POST, "username", FILTER_SANITIZE_SPECIAL_CHARS);
-  $password = $_POST["password"];
-  $password = $_POST["cpassword"];
-
-  if ($email && $username == "AdminPassword123" && $password == "AdminPassword123" && $password == "AdminPassword123" ) {
-    echo "<script>alert('You are sign in !')</script>";
-  } else {
-    echo "Wrong email or password";
-  }
+if($_SERVER["REQUEST_METHOD"] == "POST"){
+  $email = filter_input(INPUT_POST,"email", FILTER_SANITIZE_SPECIAL_CHARS);
+  $username = filter_input(INPUT_POST,"username", FILTER_SANITIZE_SPECIAL_CHARS);
+  $password = filter_input(INPUT_POST,"password", FILTER_SANITIZE_SPECIAL_CHARS);
+  $cpassword = filter_input(INPUT_POST,"cpassword", FILTER_SANITIZE_SPECIAL_CHARS);
 }
+
+if($password != $cpassword){
+  echo "the password does not confirm";
+}else{
+
+$hash = password_hash($password, PASSWORD_DEFAULT);
+$sql = "INSERT INTO signupdb(email, username, password,cpassword) VALUES('$email','$username','$password','$cpassword')";
+
+mysqli_query($conn, $sql);
+}
+
+mysqli_close($conn);
 ?>
