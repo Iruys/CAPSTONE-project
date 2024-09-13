@@ -2,7 +2,7 @@
 $servername_db = "localhost";
 $username_db = "root";
 $password_db = "";
-$name_db = "instructordb"; 
+$name_db = "gymdb"; 
 
 try{$conn = mysqli_connect($servername_db,
   $username_db,

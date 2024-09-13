@@ -99,6 +99,8 @@ if($password != $cpassword){
 $hash = password_hash($password, PASSWORD_DEFAULT);
 $sql = "INSERT INTO signupdb(email, username, password,cpassword) VALUES('$email','$username','$password','$cpassword')";
 
+header("location: login.php");
+
 mysqli_query($conn, $sql);
 }
 

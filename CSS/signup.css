@@ -90,6 +90,7 @@ padding: 10px;
 font-family: "roboto";
 margin-bottom: 30px;
 cursor: pointer;
+outline: none;
 }
 
 input{

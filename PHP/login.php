@@ -22,7 +22,7 @@ include "database.php";
   <div class="conts1">
 
     <div class="form-wrap">
-      <form action="../HTML/Home.html" method="post">
+      <form action="<?php htmlspecialchars(($_SERVER["PHP_SELF"]))?>" method="post">
 
         <div class="ttl-wrap">
           <p id="login-ttl">LOG IN</p>
@@ -56,14 +56,21 @@ include "database.php";
 </body>
 </html>
 <?php
-if (isset($_POST["submitBtn"])) {
-  $email = filter_input(INPUT_POST, "emails", FILTER_SANITIZE_SPECIAL_CHARS);
-  $password = $_POST["passwords"];
+$email = $_POST['email'] ?? '';
+$password = $_POST['password'] ?? '';
 
-  if ($email == "Admin@admin.com" && $password == "AdminPassword123") {
-    echo "<script>alert('You are sign in !')</script>";
-  } else {
-    echo "Wrong email or password";
-  }
+$sql = "SELECT id, password FROM logindb WHERE email = ?";
+$stmt = $conn->prepare($sql);
+$stmt->bind_param("s", $email);
+$stmt->execute();
+$result = $stmt->get_result();
+$user = $result->fetch_assoc();
+
+if ($user && password_verify($password, $user['password'])) {
+    $_SESSION['user_id'] = $user['id'];
+    echo json_encode(['success' => 'Login successful']);
+    header("location: home.html");  
+} else {
+    echo json_encode(['error' => 'Invalid credentials']);
 }
 ?>
