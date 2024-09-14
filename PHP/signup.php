@@ -40,7 +40,7 @@
           </select>
           
           <label for="email"> <ion-icon name="mail-outline"></ion-icon>Email</label>
-  
+
           <input type="email" name="email" id="email" class="in" required>
 
 
@@ -85,24 +85,35 @@
 </html>
 
 <?php
-if($_SERVER["REQUEST_METHOD"] == "POST"){
-  $email = filter_input(INPUT_POST,"email", FILTER_SANITIZE_SPECIAL_CHARS);
-  $username = filter_input(INPUT_POST,"username", FILTER_SANITIZE_SPECIAL_CHARS);
-  $password = filter_input(INPUT_POST,"password", FILTER_SANITIZE_SPECIAL_CHARS);
-  $cpassword = filter_input(INPUT_POST,"cpassword", FILTER_SANITIZE_SPECIAL_CHARS);
-}
+  if($_SERVER["REQUEST_METHOD"] == "POST"){
+    $email = filter_input(INPUT_POST, "email", FILTER_SANITIZE_SPECIAL_CHARS);
 
-if($password != $cpassword){
-  echo "the password does not confirm";
-}else{
+    $username = filter_input(INPUT_POST, "username", FILTER_SANITIZE_SPECIAL_CHARS);
 
-$hash = password_hash($password, PASSWORD_DEFAULT);
-$sql = "INSERT INTO signupdb(email, username, password,cpassword) VALUES('$email','$username','$password','$cpassword')";
+    $password = filter_input(INPUT_POST, "password", FILTER_SANITIZE_SPECIAL_CHARS);
 
-header("location: login.php");
+    $cpassword = filter_input(INPUT_POST, "cpassword", FILTER_SANITIZE_SPECIAL_CHARS);
 
-mysqli_query($conn, $sql);
-}
+    if(empty($email)){
+      echo"Please enter a email";
+    }else if(empty($username)){
+      echo"Please enter a username";
+    }else if(empty($password)){
+      echo"Please enter a password";
+    }else{
+      $hash = password_hash($password, PASSWORD_DEFAULT);
+      $chash = password_hash($cpassword, PASSWORD_DEFAULT);
+      $sql = "INSERT INTO signupdb (email, username, password, cpassword) VALUES ('$email','$username','$hash','$chash')";
+      try{
+        mysqli_query($conn,$sql);
+        echo"<script>alert('Successfully Sign up');</script>";
+        header("location: ../HTML/Register.html");
+      }
+     catch(mysqli_sql_exception){
+      echo"<script>alert('The username is taken');</script>";
+     }
+    }
+  }
 
-mysqli_close($conn);
+  mysqli_close($conn);
 ?>

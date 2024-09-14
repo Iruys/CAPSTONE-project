@@ -193,32 +193,32 @@ document.getElementById("addWeights").addEventListener('click', function(){
   const kgContainer= document.querySelector(".kgs");
 
   if (!isNaN(weightInput)) {
-  if (weightInput) {
-    // Create a new div element to contain the output
-    const div = document.createElement('div');
-    div.className = 'weightConts';
+    if (weightInput) {
+      // Create a new div element to contain the output
+      const div = document.createElement('div');
+      div.className = 'weightConts';
 
-    // Set the inner HTML of the new div
-    div.innerHTML = 
-        `<div>${new Date().toLocaleDateString()}</div>` + 
-        `<div>  </div>` +                                  // Empty div for spacing
-        weightInput + " kg";     
-        
-    // Get the output container element
-    const outWeightContainer = document.getElementById('outputWeight');
+      // Set the inner HTML of the new div
+      div.innerHTML = 
+          `<div>${new Date().toLocaleDateString()}</div>` + 
+          `<div>  </div>` +                                  // Empty div for spacing
+          weightInput + " kg";     
+          
+      // Get the output container element
+      const outWeightContainer = document.getElementById('outputWeight');
 
-    // Check if there are already 4 or more child nodes in the output container
-    if (outWeightContainer.childNodes.length >= 2) {
-        // Remove the first child node to ensure the container has at most 4 children
-        outWeightContainer.removeChild(outWeightContainer.firstChild);
-    }
+      // Check if there are already 4 or more child nodes in the output container
+      if (outWeightContainer.childNodes.length >= 2) {
+          // Remove the first child node to ensure the container has at most 4 children
+          outWeightContainer.removeChild(outWeightContainer.firstChild);
+      }
 
-    // Append the new div to the output container
-    outWeightContainer.appendChild(div);
+      // Append the new div to the output container
+      outWeightContainer.appendChild(div);
 
-    // Clear the input fields
-    document.getElementById("weights").value = '';
-   
+      // Clear the input fields
+      document.getElementById("weights").value = '';
+    
     }
   }
 

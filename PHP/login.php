@@ -37,7 +37,7 @@ include "database.php";
           <input type="password" name="passwords" id="passw"  class="in"  required>
           <a href="#">Forgot your password?</a>
           <div> <input type="submit" name="submitBtn" value="Sign Up" class="SU"></div>
-         <p>Don’t have an account? <a href="../HTML/signup.html"> Register</a></p>
+         <p>Don’t have an account? <a href="signup.php"> Sign up</a></p>
         </div>
       </form>
     </div>
@@ -55,22 +55,43 @@ include "database.php";
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
 </html>
+
 <?php
-$email = $_POST['email'] ?? '';
-$password = $_POST['password'] ?? '';
+// Check if form is submitted
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Get and sanitize input
+    $email = filter_input(INPUT_POST, "emails", FILTER_SANITIZE_STRING);
+    $password = filter_input(INPUT_POST, "passwords", FILTER_SANITIZE_STRING);
 
-$sql = "SELECT id, password FROM logindb WHERE email = ?";
-$stmt = $conn->prepare($sql);
-$stmt->bind_param("s", $email);
-$stmt->execute();
-$result = $stmt->get_result();
-$user = $result->fetch_assoc();
+    // Validate input
+    if (empty($email) || empty($password)) {
+        echo "Please enter both email and password.";
+    } else {
+        // Prepare and execute query
+        $sql = "SELECT id, password FROM signupdb WHERE email = ?";
+        $stmt = mysqli_prepare($conn, $sql);
+        mysqli_stmt_bind_param($stmt, "s", $email);
+        mysqli_stmt_execute($stmt);
+        mysqli_stmt_bind_result($stmt, $id, $hashed_password);
+        mysqli_stmt_fetch($stmt);
+        mysqli_stmt_close($stmt);
 
-if ($user && password_verify($password, $user['password'])) {
-    $_SESSION['user_id'] = $user['id'];
-    echo json_encode(['success' => 'Login successful']);
-    header("location: home.html");  
-} else {
-    echo json_encode(['error' => 'Invalid credentials']);
+        // Verify password
+        if (password_verify($password, $hashed_password)) {
+            // Start session and store user ID
+            session_start();
+            $_SESSION['user_id'] = $id;
+            $_SESSION['email'] = $email;
+
+            // Redirect to a protected page
+            header("Location: ../HTML/Home.html");
+            exit;
+        } else {
+            echo "Invalid email or password.";
+        }
+    }
 }
+
+// Close connection
+mysqli_close($conn);
 ?>
