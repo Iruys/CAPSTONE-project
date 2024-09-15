@@ -22,28 +22,24 @@ include "database.php";
   <div class="conts1">
 
     <div class="form-wrap">
-      <form action="<?php htmlspecialchars(($_SERVER["PHP_SELF"]))?>" method="post">
+      <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+      <div class="ttl-wrap">
+      <p id="login-ttl">LOG IN</p>
+      </div>
 
-        <div class="ttl-wrap">
-          <p id="login-ttl">LOG IN</p>
-        </div>
+      <div class="inputs-wrap">
+      <label for="email"> <ion-icon name="mail-outline"></ion-icon>Email</label>
+      <input type="email" name="email" id="email" class="in" required>
 
-        <div class="inputs-wrap">
-        
-          <label for="email"> <ion-icon name="mail-outline"></ion-icon>Email</label>
-          <input type="email" name="emails" id="email" class="in" required>
-
-          <label for="passw"><ion-icon name="lock-closed"></ion-icon> Password</label>
-          <input type="password" name="passwords" id="passw"  class="in"  required>
-          <a href="#">Forgot your password?</a>
-          <div> <input type="submit" name="submitBtn" value="Sign Up" class="SU"></div>
-         <p>Don’t have an account? <a href="signup.php"> Sign up</a></p>
-        </div>
+      <label for="passw"><ion-icon name="lock-closed"></ion-icon> Password</label>
+      <input type="password" name="password" id="passw" class="in" required>
+      <a href="#">Forgot your password?</a>
+      <div> <input type="submit" name="submitBtn" value="Sign Up" class="SU"></div>
+      <p>Don’t have an account? <a href="signup.php"> Sign up</a></p>
+      </div>
       </form>
     </div>
-
-  </div>
-
+    </div>
   <div class="conts2">
     <img src="../assets/logs.png" alt="" height="150">
   </div>
@@ -57,41 +53,55 @@ include "database.php";
 </html>
 
 <?php
-// Check if form is submitted
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Get and sanitize input
-    $email = filter_input(INPUT_POST, "emails", FILTER_SANITIZE_STRING);
-    $password = filter_input(INPUT_POST, "passwords", FILTER_SANITIZE_STRING);
+// Start the session
+session_start();
 
-    // Validate input
+// Include database connection
+include "database.php";
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Get and sanitize user inputs
+    $email = filter_input(INPUT_POST, "email", FILTER_SANITIZE_EMAIL);
+    $password = filter_input(INPUT_POST, "password", FILTER_SANITIZE_SPECIAL_CHARS);
+
+    // Debugging output
+    // var_dump($_POST); // Uncomment this line to check what is being received
+
+    // Validate inputs
     if (empty($email) || empty($password)) {
-        echo "Please enter both email and password.";
+        echo "<script>alert('Please enter an email or password');</script>";
     } else {
-        // Prepare and execute query
-        $sql = "SELECT id, password FROM signupdb WHERE email = ?";
+        // Proceed with login checks
+        $sql = "SELECT * FROM signupdb WHERE email = ?";
         $stmt = mysqli_prepare($conn, $sql);
         mysqli_stmt_bind_param($stmt, "s", $email);
         mysqli_stmt_execute($stmt);
-        mysqli_stmt_bind_result($stmt, $id, $hashed_password);
-        mysqli_stmt_fetch($stmt);
-        mysqli_stmt_close($stmt);
+        $result = mysqli_stmt_get_result($stmt);
 
-        // Verify password
-        if (password_verify($password, $hashed_password)) {
-            // Start session and store user ID
-            session_start();
-            $_SESSION['user_id'] = $id;
-            $_SESSION['email'] = $email;
+        if (mysqli_num_rows($result) === 1) {
+            // Fetch user data
+            $user = mysqli_fetch_assoc($result);
 
-            // Redirect to a protected page
-            header("Location: ../HTML/Home.html");
-            exit;
+            // Verify the password
+            if (password_verify($password, $user['password'])) {
+                // Password matches
+                $_SESSION['username'] = $user['username']; // Store username in session
+                header("Location: Home.php"); // Redirect to the home page
+                exit();
+            } else {
+                // Password does not match
+                echo "<script>alert('Incorrect email or password');</script>";
+            }
         } else {
-            echo "Invalid email or password.";
+            // Email does not exist
+            echo "<script>alert('Incorrect email or password');</script>";
         }
-    }
-}
 
-// Close connection
-mysqli_close($conn);
+        // Close the statement
+        mysqli_stmt_close($stmt);
+    }
+
+    // Close the database connection
+    mysqli_close($conn);
+}
 ?>

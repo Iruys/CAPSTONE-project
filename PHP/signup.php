@@ -29,7 +29,7 @@
         </div>
 
         <div class="inputs-wrap">
-          <select name="option" id="">
+          <select name="roleOption" id="">
     
             <option value="Client">
              Client
@@ -86,6 +86,9 @@
 
 <?php
   if($_SERVER["REQUEST_METHOD"] == "POST"){
+
+    $role = filter_input(INPUT_POST, "roleOption", FILTER_SANITIZE_SPECIAL_CHARS);
+
     $email = filter_input(INPUT_POST, "email", FILTER_SANITIZE_SPECIAL_CHARS);
 
     $username = filter_input(INPUT_POST, "username", FILTER_SANITIZE_SPECIAL_CHARS);
@@ -100,14 +103,16 @@
       echo"Please enter a username";
     }else if(empty($password)){
       echo"Please enter a password";
-    }else{
+    }else if($password != $cpassword)
+    echo"<script>alert('Password not match!');</script>";
+    else{
       $hash = password_hash($password, PASSWORD_DEFAULT);
       $chash = password_hash($cpassword, PASSWORD_DEFAULT);
-      $sql = "INSERT INTO signupdb (email, username, password, cpassword) VALUES ('$email','$username','$hash','$chash')";
+      $sql = "INSERT INTO signupdb (role,   email, username, password, cpassword) VALUES ('$role','$email','$username','$hash','$chash')";
       try{
         mysqli_query($conn,$sql);
         echo"<script>alert('Successfully Sign up');</script>";
-        header("location: ../HTML/Register.html");
+        header("location: register.php");
       }
      catch(mysqli_sql_exception){
       echo"<script>alert('The username is taken');</script>";
